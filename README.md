@@ -89,7 +89,7 @@ The Vite build uses `/phishguard-ai/` as its base path and the Actions workflow 
 
 <https://maninani12.github.io/phishguard-ai/>
 
-In the GitHub repository, open **Settings → Pages** and set **Build and deployment → Source** to **GitHub Actions**. Then open **Settings → Secrets and variables → Actions → Variables**, create a repository variable named `VITE_API_BASE_URL`, and set its value to the base URL of the deployed FastAPI service, for example `https://your-service.example` (replace this example with the real URL; do not include `/api`). This value is public frontend configuration, not a secret. The Pages workflow fails clearly when the variable is missing. Pushes to `main` build and deploy the frontend.
+In the GitHub repository, open **Settings → Pages** and set **Build and deployment → Source** to **GitHub Actions**. The Pages workflow can build and deploy while the backend URL is not yet known. In that state, the site loads and clearly reports that the API is not connected; live URL analysis remains unavailable. After deploying FastAPI and obtaining its actual base URL, open **Settings → Secrets and variables → Actions → Variables**, create a repository variable named `VITE_API_BASE_URL`, and set it to that base URL without `/api`. This is public frontend configuration, not a secret. Rerun the Pages workflow or push a new commit on `main` so the production bundle includes the configured API URL.
 
 For local development, copy `frontend/.env.example` to `frontend/.env.local`; its default points to `http://127.0.0.1:8010`. The frontend uses `VITE_API_BASE_URL` consistently for `/api/health`, `/api/model_info`, and `/api/predict`.
 
@@ -97,7 +97,7 @@ For local development, copy `frontend/.env.example` to `frontend/.env.local`; it
 
 `render.yaml` prepares a Render web service using the repository root, the existing model under `models/`, and the start command `uvicorn backend.app:app --host 0.0.0.0 --port $PORT`. To deploy, connect `maninani12/phishguard-ai` in Render, select **New → Blueprint**, and apply the `render.yaml` configuration on `main`. After Render finishes deploying, copy the service's actual HTTPS URL into the GitHub Actions repository variable `VITE_API_BASE_URL`, then rerun the Pages workflow or push a new commit to `main`.
 
-The FastAPI CORS policy allows `https://maninani12.github.io` and the local Vite origins `http://localhost:5173` and `http://127.0.0.1:5173`. CORS origins contain no Pages path. The backend is not deployed merely by adding this configuration; until a hosting service has been deployed and provides its actual URL, the frontend's production API URL still needs to be configured and the backend remains local.
+The FastAPI CORS policy allows `https://maninani12.github.io` and the local Vite origins `http://localhost:5173` and `http://127.0.0.1:5173`. CORS origins contain no Pages path. The backend is not deployed merely by adding this configuration. Until a hosting service has been deployed and its actual URL has been added as the `VITE_API_BASE_URL` Actions repository variable, GitHub Pages has no live prediction API.
 
 ## Frontend and 3D UI
 
