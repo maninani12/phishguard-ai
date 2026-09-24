@@ -1,0 +1,152 @@
+{
+  "dataset": "UCI PhiUSIIL Phishing URL Dataset (ID 967)",
+  "dataset_sha256": "a236549cd369cd80bd478ff8e1779cbf44c58d5c3f79f7a51a1adbed7d06d1c6",
+  "dataset_records_raw": 235795,
+  "dataset_records_clean": 234894,
+  "class_distribution_clean": {
+    "1": 134849,
+    "0": 100045
+  },
+  "label_mapping": {
+    "1": "Legitimate",
+    "0": "Potential Phishing"
+  },
+  "model": "Logistic Regression",
+  "feature_count": 38,
+  "features": [
+    "URLLength",
+    "DomainLength",
+    "TLDLength",
+    "TLD",
+    "NoOfSubDomain",
+    "HasObfuscation",
+    "NoOfObfuscatedChar",
+    "ObfuscationRatio",
+    "NoOfLettersInURL",
+    "LetterRatioInURL",
+    "NoOfDegitsInURL",
+    "DegitRatioInURL",
+    "NoOfEqualsInURL",
+    "NoOfQMarkInURL",
+    "NoOfAmpersandInURL",
+    "NoOfOtherSpecialCharsInURL",
+    "SpacialCharRatioInURL",
+    "IsDomainIP",
+    "IsHTTPS",
+    "num_dots",
+    "num_hyphens",
+    "num_underscores",
+    "num_slashes",
+    "num_at",
+    "num_hashes",
+    "num_percent",
+    "num_colons",
+    "num_semicolons",
+    "url_entropy",
+    "path_length",
+    "query_length",
+    "fragment_length",
+    "has_port",
+    "has_punycode",
+    "has_url_shortener",
+    "num_encoded_chars",
+    "max_repeat_ratio",
+    "num_suspicious_keywords"
+  ],
+  "metrics": {
+    "model": "Logistic Regression",
+    "accuracy": 0.972093914302135,
+    "precision": 0.9869270833333333,
+    "recall": 0.9470238392723275,
+    "f1": 0.9665637991277513,
+    "training_score": 0.9717797940558232,
+    "testing_score": 0.972093914302135,
+    "train_test_gap": -0.0003141202463118331,
+    "false_positives": 251,
+    "false_negatives": 1060,
+    "positive_class": "Potential Phishing (0)",
+    "confusion_matrix": {
+      "labels": [
+        "Phishing (0)",
+        "Legitimate (1)"
+      ],
+      "matrix": [
+        [
+          18949,
+          1060
+        ],
+        [
+          251,
+          26719
+        ]
+      ]
+    }
+  },
+  "random_stratified_metrics": {
+    "model": "Logistic Regression",
+    "accuracy": 0.972093914302135,
+    "precision": 0.9869270833333333,
+    "recall": 0.9470238392723275,
+    "f1": 0.9665637991277513,
+    "training_score": 0.9717797940558232,
+    "testing_score": 0.972093914302135,
+    "train_test_gap": -0.0003141202463118331,
+    "false_positives": 251,
+    "false_negatives": 1060,
+    "positive_class": "Potential Phishing (0)",
+    "confusion_matrix": {
+      "labels": [
+        "Phishing (0)",
+        "Legitimate (1)"
+      ],
+      "matrix": [
+        [
+          18949,
+          1060
+        ],
+        [
+          251,
+          26719
+        ]
+      ]
+    }
+  },
+  "domain_aware_metrics": {
+    "train_rows": 187457,
+    "test_rows": 47437,
+    "train_domains": 176060,
+    "test_domains": 44016,
+    "domain_overlap": 0,
+    "accuracy": 0.9719206526551004,
+    "precision": 0.9875817661488144,
+    "recall": 0.9466542568825316,
+    "f1": 0.9666850082537142,
+    "false_positives": 243,
+    "false_negatives": 1089,
+    "positive_class": "Potential Phishing (0)",
+    "confusion_matrix": [
+      [
+        19325,
+        1089
+      ],
+      [
+        243,
+        26780
+      ]
+    ]
+  },
+  "random_state": 42,
+  "training_date_utc": "2026-09-24T09:55:01.503256+00:00",
+  "pipeline_version": "1.0",
+  "cleaning": {
+    "input_rows": 235795,
+    "missing_url_removed": 0,
+    "missing_label_removed": 0,
+    "empty_url_removed": 0,
+    "invalid_url_removed": 0,
+    "invalid_or_inconsistent_label_removed": 0,
+    "conflicting_label_urls_removed": 2,
+    "duplicate_normalized_url_removed": 899,
+    "clean_rows": 234894
+  }
+}

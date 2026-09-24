@@ -1,0 +1,514 @@
+{
+  "random_state": 42,
+  "random_stratified": {
+    "train_rows": 187915,
+    "test_rows": 46979,
+    "train_domains": 176927,
+    "test_domains": 45121,
+    "domain_overlap": 1972,
+    "models": [
+      {
+        "model": "Logistic Regression",
+        "accuracy": 0.972093914302135,
+        "precision": 0.9869270833333333,
+        "recall": 0.9470238392723275,
+        "f1": 0.9665637991277513,
+        "training_score": 0.9717797940558232,
+        "testing_score": 0.972093914302135,
+        "train_test_gap": -0.0003141202463118331,
+        "false_positives": 251,
+        "false_negatives": 1060,
+        "positive_class": "Potential Phishing (0)",
+        "confusion_matrix": {
+          "labels": [
+            "Phishing (0)",
+            "Legitimate (1)"
+          ],
+          "matrix": [
+            [
+              18949,
+              1060
+            ],
+            [
+              251,
+              26719
+            ]
+          ]
+        }
+      },
+      {
+        "model": "Decision Tree",
+        "accuracy": 0.979948487622129,
+        "precision": 0.9841551978061043,
+        "recall": 0.9685141686241191,
+        "f1": 0.976272040302267,
+        "training_score": 0.9866216108346859,
+        "testing_score": 0.979948487622129,
+        "train_test_gap": 0.006673123212556864,
+        "false_positives": 312,
+        "false_negatives": 630,
+        "positive_class": "Potential Phishing (0)",
+        "confusion_matrix": {
+          "labels": [
+            "Phishing (0)",
+            "Legitimate (1)"
+          ],
+          "matrix": [
+            [
+              19379,
+              630
+            ],
+            [
+              312,
+              26658
+            ]
+          ]
+        }
+      },
+      {
+        "model": "Random Forest",
+        "accuracy": 0.9781604546712361,
+        "precision": 0.9848786717752235,
+        "recall": 0.9635164176120745,
+        "f1": 0.9740804365400162,
+        "training_score": 0.9786179921773143,
+        "testing_score": 0.9781604546712361,
+        "train_test_gap": 0.0004575375060781317,
+        "false_positives": 296,
+        "false_negatives": 730,
+        "positive_class": "Potential Phishing (0)",
+        "confusion_matrix": {
+          "labels": [
+            "Phishing (0)",
+            "Legitimate (1)"
+          ],
+          "matrix": [
+            [
+              19279,
+              730
+            ],
+            [
+              296,
+              26674
+            ]
+          ]
+        }
+      }
+    ],
+    "selected_model": "Logistic Regression"
+  },
+  "domain_aware": {
+    "train_rows": 187457,
+    "test_rows": 47437,
+    "train_domains": 176060,
+    "test_domains": 44016,
+    "domain_overlap": 0,
+    "accuracy": 0.9719206526551004,
+    "precision": 0.9875817661488144,
+    "recall": 0.9466542568825316,
+    "f1": 0.9666850082537142,
+    "false_positives": 243,
+    "false_negatives": 1089,
+    "positive_class": "Potential Phishing (0)",
+    "confusion_matrix": [
+      [
+        19325,
+        1089
+      ],
+      [
+        243,
+        26780
+      ]
+    ]
+  },
+  "domain_audit": {
+    "unique_urls": 234894,
+    "unique_domains": 220076,
+    "random_train_domains": 176927,
+    "random_test_domains": 45121,
+    "random_domain_overlap": 1972
+  },
+  "robustness_groups": [
+    {
+      "group": "bare_root_urls",
+      "held_out_count": 41321,
+      "accuracy": 0.9690714164710438,
+      "precision": 0.9815101289134438,
+      "recall": 0.9284370427147934,
+      "f1": 0.9542361956599584,
+      "class_distribution": {
+        "1": 26970,
+        "0": 14351
+      }
+    },
+    {
+      "group": "non_www_root_urls",
+      "held_out_count": 6599,
+      "accuracy": 0.8643733899075617,
+      "precision": 1.0,
+      "recall": 0.8643733899075617,
+      "f1": 0.9272535154027473,
+      "class_distribution": {
+        "0": 6599
+      }
+    },
+    {
+      "group": "www_domains",
+      "held_out_count": 35329,
+      "accuracy": 0.9888759942257069,
+      "precision": 0.9703589985829003,
+      "recall": 0.9830123220480919,
+      "f1": 0.9766446781957568,
+      "class_distribution": {
+        "1": 26970,
+        "0": 8359
+      }
+    },
+    {
+      "group": "domains_with_paths",
+      "held_out_count": 5440,
+      "accuracy": 0.9939338235294117,
+      "precision": 1.0,
+      "recall": 0.9939338235294117,
+      "f1": 0.9969576841523001,
+      "class_distribution": {
+        "0": 5440
+      }
+    },
+    {
+      "group": "HTTPS",
+      "held_out_count": 36630,
+      "accuracy": 0.9642096642096643,
+      "precision": 0.9716416224155463,
+      "recall": 0.8902691511387164,
+      "f1": 0.9291772459618605,
+      "class_distribution": {
+        "1": 26970,
+        "0": 9660
+      }
+    },
+    {
+      "group": "HTTP",
+      "held_out_count": 10349,
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "class_distribution": {
+        "0": 10349
+      }
+    },
+    {
+      "group": ".com",
+      "held_out_count": 22495,
+      "accuracy": 0.958390753500778,
+      "precision": 0.9833477241889725,
+      "recall": 0.9086971389490482,
+      "f1": 0.9445497630331754,
+      "class_distribution": {
+        "1": 13722,
+        "0": 8773
+      }
+    },
+    {
+      "group": ".in",
+      "held_out_count": 284,
+      "accuracy": 0.9859154929577465,
+      "precision": 1.0,
+      "recall": 0.9652173913043478,
+      "f1": 0.9823008849557522,
+      "class_distribution": {
+        "1": 169,
+        "0": 115
+      }
+    },
+    {
+      "group": "IP_based",
+      "held_out_count": 132,
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "class_distribution": {
+        "0": 132
+      }
+    },
+    {
+      "group": "suspicious_long",
+      "held_out_count": 449,
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "class_distribution": {
+        "0": 449
+      }
+    },
+    {
+      "group": "obfuscated",
+      "held_out_count": 484,
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "class_distribution": {
+        "0": 484
+      }
+    },
+    {
+      "group": "punycode",
+      "held_out_count": 35,
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "class_distribution": {
+        "0": 35
+      }
+    },
+    {
+      "group": "shortener",
+      "held_out_count": 118,
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "class_distribution": {
+        "0": 118
+      }
+    },
+    {
+      "group": "ports",
+      "held_out_count": 5,
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "class_distribution": {
+        "0": 5
+      }
+    },
+    {
+      "group": "suspicious_query",
+      "held_out_count": 414,
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "class_distribution": {
+        "0": 414
+      }
+    }
+  ],
+  "bias_analysis": {
+    "url_prefix_www_vs_other": {
+      "0": {
+        "false": 58435,
+        "true": 41610
+      },
+      "1": {
+        "false": 0,
+        "true": 134849
+      }
+    },
+    "scheme_by_label": {
+      "0": {
+        "http": 51502,
+        "https": 48543
+      },
+      "1": {
+        "http": 0,
+        "https": 134849
+      }
+    },
+    "bare_vs_path_by_label": {
+      "0": {
+        "false": 72780,
+        "true": 27265
+      },
+      "1": {
+        "false": 134849,
+        "true": 0
+      }
+    },
+    "com_in_by_label": {
+      "0": {
+        "com": 43453,
+        "in": 535
+      },
+      "1": {
+        "com": 68785,
+        "in": 842
+      }
+    },
+    "top_tlds_by_label": {
+      "0": {
+        "com": 43453,
+        "org": 2264,
+        "uk": 322,
+        "net": 3068,
+        "de": 679,
+        "au": 370,
+        "jp": 137,
+        "edu": 5,
+        "it": 218,
+        "nl": 191,
+        "ca": 112,
+        "fr": 492,
+        "gov": 0,
+        "br": 648,
+        "ru": 2971,
+        "in": 535,
+        "eu": 283,
+        "us": 429,
+        "info": 892,
+        "be": 74,
+        "se": 123,
+        "es": 126,
+        "nz": 60,
+        "pl": 792,
+        "cz": 57
+      },
+      "1": {
+        "com": 68785,
+        "org": 16524,
+        "uk": 6073,
+        "net": 3998,
+        "de": 3310,
+        "au": 2606,
+        "jp": 2082,
+        "edu": 1856,
+        "it": 1669,
+        "nl": 1536,
+        "ca": 1502,
+        "fr": 1365,
+        "gov": 1276,
+        "br": 1193,
+        "ru": 892,
+        "in": 842,
+        "eu": 695,
+        "us": 678,
+        "info": 673,
+        "be": 622,
+        "se": 581,
+        "es": 577,
+        "nz": 553,
+        "pl": 538,
+        "cz": 530
+      }
+    },
+    "top_tld_counts": {
+      "com": 112238,
+      "org": 18788,
+      "net": 7066,
+      "app": 6444,
+      "uk": 6395,
+      "co": 5291,
+      "io": 4149,
+      "de": 3989,
+      "ru": 3863,
+      "au": 2976,
+      "dev": 2319,
+      "top": 2311,
+      "jp": 2219,
+      "it": 1887,
+      "edu": 1861,
+      "fr": 1857,
+      "br": 1841,
+      "nl": 1727,
+      "ca": 1614,
+      "info": 1565,
+      "site": 1469,
+      "xyz": 1443,
+      "link": 1425,
+      "in": 1377,
+      "pl": 1330,
+      "gov": 1276,
+      "cf": 1203,
+      "ga": 1110,
+      "us": 1107,
+      "me": 997
+    },
+    "url_length_quantiles_by_label": {
+      "0": {
+        "0": 15.0,
+        "0.25": 27.0,
+        "0.5": 34.0,
+        "0.75": 49.0,
+        "0.9": 80.0,
+        "0.95": 99.0,
+        "0.99": 231.0,
+        "1": 6097.0
+      },
+      "1": {
+        "0": 17.0,
+        "0.25": 25.0,
+        "0.5": 28.0,
+        "0.75": 31.0,
+        "0.9": 35.0,
+        "0.95": 37.0,
+        "0.99": 41.0,
+        "1": 59.0
+      }
+    },
+    "path_length_quantiles_by_label": {
+      "0": {
+        "0": 1.0,
+        "0.25": 1.0,
+        "0.5": 1.0,
+        "0.75": 6.0,
+        "0.9": 28.0,
+        "0.95": 52.0,
+        "0.99": 86.0,
+        "1": 4248.0
+      },
+      "1": {
+        "0": 1.0,
+        "0.25": 1.0,
+        "0.5": 1.0,
+        "0.75": 1.0,
+        "0.9": 1.0,
+        "0.95": 1.0,
+        "0.99": 1.0,
+        "1": 1.0
+      }
+    },
+    "query_length_quantiles_by_label": {
+      "0": {
+        "0": 0.0,
+        "0.25": 0.0,
+        "0.5": 0.0,
+        "0.75": 0.0,
+        "0.9": 0.0,
+        "0.95": 11.799999999988358,
+        "0.99": 156.0,
+        "1": 3391.0
+      },
+      "1": {
+        "0": 0.0,
+        "0.25": 0.0,
+        "0.5": 0.0,
+        "0.75": 0.0,
+        "0.9": 0.0,
+        "0.95": 0.0,
+        "0.99": 0.0,
+        "1": 0.0
+      }
+    }
+  },
+  "cleaning": {
+    "input_rows": 235795,
+    "missing_url_removed": 0,
+    "missing_label_removed": 0,
+    "empty_url_removed": 0,
+    "invalid_url_removed": 0,
+    "invalid_or_inconsistent_label_removed": 0,
+    "conflicting_label_urls_removed": 2,
+    "duplicate_normalized_url_removed": 899,
+    "clean_rows": 234894,
+    "duplicate_rows_in_raw": 0,
+    "raw_duplicate_urls": 425,
+    "duplicates_removed_by_normalized_url": 899,
+    "invalid_label_rows_removed": 0
+  }
+}

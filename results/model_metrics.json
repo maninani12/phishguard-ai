@@ -1,0 +1,92 @@
+{
+  "models": [
+    {
+      "model": "Logistic Regression",
+      "accuracy": 0.972093914302135,
+      "precision": 0.9869270833333333,
+      "recall": 0.9470238392723275,
+      "f1": 0.9665637991277513,
+      "training_score": 0.9717797940558232,
+      "testing_score": 0.972093914302135,
+      "train_test_gap": -0.0003141202463118331,
+      "false_positives": 251,
+      "false_negatives": 1060,
+      "positive_class": "Potential Phishing (0)",
+      "confusion_matrix": {
+        "labels": [
+          "Phishing (0)",
+          "Legitimate (1)"
+        ],
+        "matrix": [
+          [
+            18949,
+            1060
+          ],
+          [
+            251,
+            26719
+          ]
+        ]
+      }
+    },
+    {
+      "model": "Decision Tree",
+      "accuracy": 0.979948487622129,
+      "precision": 0.9841551978061043,
+      "recall": 0.9685141686241191,
+      "f1": 0.976272040302267,
+      "training_score": 0.9866216108346859,
+      "testing_score": 0.979948487622129,
+      "train_test_gap": 0.006673123212556864,
+      "false_positives": 312,
+      "false_negatives": 630,
+      "positive_class": "Potential Phishing (0)",
+      "confusion_matrix": {
+        "labels": [
+          "Phishing (0)",
+          "Legitimate (1)"
+        ],
+        "matrix": [
+          [
+            19379,
+            630
+          ],
+          [
+            312,
+            26658
+          ]
+        ]
+      }
+    },
+    {
+      "model": "Random Forest",
+      "accuracy": 0.9781604546712361,
+      "precision": 0.9848786717752235,
+      "recall": 0.9635164176120745,
+      "f1": 0.9740804365400162,
+      "training_score": 0.9786179921773143,
+      "testing_score": 0.9781604546712361,
+      "train_test_gap": 0.0004575375060781317,
+      "false_positives": 296,
+      "false_negatives": 730,
+      "positive_class": "Potential Phishing (0)",
+      "confusion_matrix": {
+        "labels": [
+          "Phishing (0)",
+          "Legitimate (1)"
+        ],
+        "matrix": [
+          [
+            19279,
+            730
+          ],
+          [
+            296,
+            26674
+          ]
+        ]
+      }
+    }
+  ],
+  "selected_model": "Logistic Regression"
+}
