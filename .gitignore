@@ -5,6 +5,7 @@ __pycache__/
 .pytest_cache/
 frontend/node_modules/
 frontend/dist/
+frontend/.env.local
 *.log
 data/raw/uci_extract/
 data/raw/phiusiil.zip

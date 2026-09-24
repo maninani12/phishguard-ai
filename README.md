@@ -79,6 +79,26 @@ To retrain, run `python -m src.train`. This reads only `data/raw/PhiUSIIL_Phishi
 
 Only HTTP and HTTPS schemes are accepted. Empty, malformed, control-character, and over-2,048-character inputs return validation errors. The API contains no URL-fetching client.
 
+## Deployment
+
+The frontend and API are deployed separately. GitHub Pages serves static files and does not execute Python or FastAPI, so URL predictions require a separately hosted API service. The checked-in model pipeline is used as-is at API startup; deployment does not retrain it. The dataset is excluded from Git and is not needed by the running service.
+
+### Frontend: GitHub Pages
+
+The Vite build uses `/phishguard-ai/` as its base path and the Actions workflow publishes only `frontend/dist` to the project site:
+
+<https://maninani12.github.io/phishguard-ai/>
+
+In the GitHub repository, open **Settings → Pages** and set **Build and deployment → Source** to **GitHub Actions**. Then open **Settings → Secrets and variables → Actions → Variables**, create a repository variable named `VITE_API_BASE_URL`, and set its value to the base URL of the deployed FastAPI service, for example `https://your-service.example` (replace this example with the real URL; do not include `/api`). This value is public frontend configuration, not a secret. The Pages workflow fails clearly when the variable is missing. Pushes to `main` build and deploy the frontend.
+
+For local development, copy `frontend/.env.example` to `frontend/.env.local`; its default points to `http://127.0.0.1:8010`. The frontend uses `VITE_API_BASE_URL` consistently for `/api/health`, `/api/model_info`, and `/api/predict`.
+
+### Backend: FastAPI hosting service
+
+`render.yaml` prepares a Render web service using the repository root, the existing model under `models/`, and the start command `uvicorn backend.app:app --host 0.0.0.0 --port $PORT`. To deploy, connect `maninani12/phishguard-ai` in Render, select **New → Blueprint**, and apply the `render.yaml` configuration on `main`. After Render finishes deploying, copy the service's actual HTTPS URL into the GitHub Actions repository variable `VITE_API_BASE_URL`, then rerun the Pages workflow or push a new commit to `main`.
+
+The FastAPI CORS policy allows `https://maninani12.github.io` and the local Vite origins `http://localhost:5173` and `http://127.0.0.1:5173`. CORS origins contain no Pages path. The backend is not deployed merely by adding this configuration; until a hosting service has been deployed and provides its actual URL, the frontend's production API URL still needs to be configured and the backend remains local.
+
 ## Frontend and 3D UI
 
 React + Vite + Tailwind CSS, Lucide React, Framer Motion, Three.js, React Three Fiber, and Drei. The shield visualization uses a low-detail shield, points, wireframe geometry, orbital rings, gentle movement, and pointer response. The interface includes a WebGL fallback, responsive layout, and reduced-motion styling. Analyzer loading reflects the real API call; model metrics are fetched dynamically.

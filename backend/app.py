@@ -11,7 +11,7 @@ from src.feature_schema import FEATURES,extract_url_features,normalize_url
 
 ROOT=Path(__file__).resolve().parents[1]
 app=FastAPI(title="PhishGuard API",description="URL-only static phishing classification. Submitted URLs are never visited.",version="1.0")
-app.add_middleware(CORSMiddleware,allow_origins=["http://localhost:5173","http://127.0.0.1:5173"],allow_methods=["GET","POST"],allow_headers=["Content-Type"])
+app.add_middleware(CORSMiddleware,allow_origins=["https://maninani12.github.io","http://localhost:5173","http://127.0.0.1:5173"],allow_methods=["GET","POST"],allow_headers=["Content-Type"])
 
 @lru_cache(maxsize=1)
 def load_assets():
