@@ -10,3 +10,13 @@ frontend/.env.local
 data/raw/uci_extract/
 data/raw/phiusiil.zip
 data/raw/*.csv
+
+# Third-party candidate datasets are audit material only and are never used for
+# training. The bulk files are large, licence-constrained or explicitly unusable,
+# so they stay on disk and out of version control. The small provenance manifests
+# (*.json) are deliberately tracked so the licensing decisions stay reviewable.
+data/candidates/**/*.csv
+data/candidates/**/*.csv.partial
+data/candidates/**/*.partial
+data/candidates/**/*.parquet
+data/candidates/**/*.zip

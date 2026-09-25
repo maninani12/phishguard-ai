@@ -1,0 +1,331 @@
+{
+  "source_run": "models\\experiments\\baseline_experiment_metrics.json",
+  "disclaimer": "Analytical cost scenarios only. Not an owner-approved business policy.",
+  "primary_split": {
+    "label": "PRIMARY EVALUATION - STRATIFIED URL-LEVEL 80/20",
+    "train_rows": 187915,
+    "test_rows": 46979,
+    "random_state": 42
+  },
+  "domain_split": {
+    "label": "DOMAIN-AWARE EVALUATION - REGISTRABLE-DOMAIN GROUPED, PSL-AWARE",
+    "method": "GroupShuffleSplit test_size=0.2, random_state=42, groups from src/domain_split.py (tldextract, PSL private domains included)",
+    "train_rows": 187391,
+    "test_rows": 47503,
+    "train_groups": 157840,
+    "test_groups": 39460,
+    "overlap_count": 0,
+    "overlap_pct_of_union": 0.0,
+    "overlap_pct_of_test": 0.0
+  },
+  "splits": {
+    "primary": {
+      "Logistic Regression": {
+        "accuracy": 0.972093914302135,
+        "precision": 0.9869270833333333,
+        "recall": 0.9470238392723275,
+        "f1": 0.9665637991277513,
+        "false_positives": 251,
+        "false_negatives": 1060,
+        "actual_phishing": 20009,
+        "actual_legitimate": 26970,
+        "false_positive_rate": 0.009306637004078605,
+        "false_negative_rate": 0.05297616072767255,
+        "cost_scenarios": {
+          "A": {
+            "fp_cost": 1,
+            "fn_cost": 1,
+            "description": "equal weights",
+            "expected_error_cost": 1311
+          },
+          "B": {
+            "fp_cost": 1,
+            "fn_cost": 2,
+            "description": "missed phish twice as costly as a false alarm",
+            "expected_error_cost": 2371
+          },
+          "C": {
+            "fp_cost": 1,
+            "fn_cost": 5,
+            "description": "missed phish five times as costly as a false alarm",
+            "expected_error_cost": 5551
+          },
+          "D": {
+            "fp_cost": 2,
+            "fn_cost": 5,
+            "description": "false alarm twice as costly, missed phish five times as costly",
+            "expected_error_cost": 5802
+          }
+        }
+      },
+      "Decision Tree": {
+        "accuracy": 0.979948487622129,
+        "precision": 0.9841551978061043,
+        "recall": 0.9685141686241191,
+        "f1": 0.976272040302267,
+        "false_positives": 312,
+        "false_negatives": 630,
+        "actual_phishing": 20009,
+        "actual_legitimate": 26970,
+        "false_positive_rate": 0.011568409343715239,
+        "false_negative_rate": 0.03148583137588085,
+        "cost_scenarios": {
+          "A": {
+            "fp_cost": 1,
+            "fn_cost": 1,
+            "description": "equal weights",
+            "expected_error_cost": 942
+          },
+          "B": {
+            "fp_cost": 1,
+            "fn_cost": 2,
+            "description": "missed phish twice as costly as a false alarm",
+            "expected_error_cost": 1572
+          },
+          "C": {
+            "fp_cost": 1,
+            "fn_cost": 5,
+            "description": "missed phish five times as costly as a false alarm",
+            "expected_error_cost": 3462
+          },
+          "D": {
+            "fp_cost": 2,
+            "fn_cost": 5,
+            "description": "false alarm twice as costly, missed phish five times as costly",
+            "expected_error_cost": 3774
+          }
+        }
+      },
+      "Random Forest": {
+        "accuracy": 0.9781604546712361,
+        "precision": 0.9848786717752235,
+        "recall": 0.9635164176120745,
+        "f1": 0.9740804365400162,
+        "false_positives": 296,
+        "false_negatives": 730,
+        "actual_phishing": 20009,
+        "actual_legitimate": 26970,
+        "false_positive_rate": 0.010975157582499073,
+        "false_negative_rate": 0.036483582387925435,
+        "cost_scenarios": {
+          "A": {
+            "fp_cost": 1,
+            "fn_cost": 1,
+            "description": "equal weights",
+            "expected_error_cost": 1026
+          },
+          "B": {
+            "fp_cost": 1,
+            "fn_cost": 2,
+            "description": "missed phish twice as costly as a false alarm",
+            "expected_error_cost": 1756
+          },
+          "C": {
+            "fp_cost": 1,
+            "fn_cost": 5,
+            "description": "missed phish five times as costly as a false alarm",
+            "expected_error_cost": 3946
+          },
+          "D": {
+            "fp_cost": 2,
+            "fn_cost": 5,
+            "description": "false alarm twice as costly, missed phish five times as costly",
+            "expected_error_cost": 4242
+          }
+        }
+      },
+      "crossover_fp_over_fn_cost_ratio": {
+        "Random Forest cheaper than Decision Tree when FP/FN cost ratio >": 6.25,
+        "Logistic Regression cheaper than Decision Tree when FP/FN cost ratio >": 7.049180327868853
+      },
+      "scenario_winners": {
+        "A": {
+          "costs": {
+            "Logistic Regression": 1311,
+            "Decision Tree": 942,
+            "Random Forest": 1026
+          },
+          "lowest": "Decision Tree"
+        },
+        "B": {
+          "costs": {
+            "Logistic Regression": 2371,
+            "Decision Tree": 1572,
+            "Random Forest": 1756
+          },
+          "lowest": "Decision Tree"
+        },
+        "C": {
+          "costs": {
+            "Logistic Regression": 5551,
+            "Decision Tree": 3462,
+            "Random Forest": 3946
+          },
+          "lowest": "Decision Tree"
+        },
+        "D": {
+          "costs": {
+            "Logistic Regression": 5802,
+            "Decision Tree": 3774,
+            "Random Forest": 4242
+          },
+          "lowest": "Decision Tree"
+        }
+      }
+    },
+    "domain_aware": {
+      "Logistic Regression": {
+        "accuracy": 0.9731174873165905,
+        "precision": 0.9869871402327005,
+        "recall": 0.9498109315916122,
+        "f1": 0.9680422432993818,
+        "false_positives": 255,
+        "false_negatives": 1022,
+        "actual_phishing": 20363,
+        "actual_legitimate": 27140,
+        "false_positive_rate": 0.00939572586588062,
+        "false_negative_rate": 0.050189068408387764,
+        "cost_scenarios": {
+          "A": {
+            "fp_cost": 1,
+            "fn_cost": 1,
+            "description": "equal weights",
+            "expected_error_cost": 1277
+          },
+          "B": {
+            "fp_cost": 1,
+            "fn_cost": 2,
+            "description": "missed phish twice as costly as a false alarm",
+            "expected_error_cost": 2299
+          },
+          "C": {
+            "fp_cost": 1,
+            "fn_cost": 5,
+            "description": "missed phish five times as costly as a false alarm",
+            "expected_error_cost": 5365
+          },
+          "D": {
+            "fp_cost": 2,
+            "fn_cost": 5,
+            "description": "false alarm twice as costly, missed phish five times as costly",
+            "expected_error_cost": 5620
+          }
+        }
+      },
+      "Decision Tree": {
+        "accuracy": 0.9792013136012462,
+        "precision": 0.9838186086001098,
+        "recall": 0.9673918381377989,
+        "f1": 0.9755360768583172,
+        "false_positives": 324,
+        "false_negatives": 664,
+        "actual_phishing": 20363,
+        "actual_legitimate": 27140,
+        "false_positive_rate": 0.011938098747236552,
+        "false_negative_rate": 0.03260816186220105,
+        "cost_scenarios": {
+          "A": {
+            "fp_cost": 1,
+            "fn_cost": 1,
+            "description": "equal weights",
+            "expected_error_cost": 988
+          },
+          "B": {
+            "fp_cost": 1,
+            "fn_cost": 2,
+            "description": "missed phish twice as costly as a false alarm",
+            "expected_error_cost": 1652
+          },
+          "C": {
+            "fp_cost": 1,
+            "fn_cost": 5,
+            "description": "missed phish five times as costly as a false alarm",
+            "expected_error_cost": 3644
+          },
+          "D": {
+            "fp_cost": 2,
+            "fn_cost": 5,
+            "description": "false alarm twice as costly, missed phish five times as costly",
+            "expected_error_cost": 3968
+          }
+        }
+      },
+      "Random Forest": {
+        "accuracy": 0.979053954487085,
+        "precision": 0.9853162273228425,
+        "recall": 0.9655257083926729,
+        "f1": 0.9753205843688767,
+        "false_positives": 293,
+        "false_negatives": 702,
+        "actual_phishing": 20363,
+        "actual_legitimate": 27140,
+        "false_positive_rate": 0.01079587324981577,
+        "false_negative_rate": 0.03447429160732701,
+        "cost_scenarios": {
+          "A": {
+            "fp_cost": 1,
+            "fn_cost": 1,
+            "description": "equal weights",
+            "expected_error_cost": 995
+          },
+          "B": {
+            "fp_cost": 1,
+            "fn_cost": 2,
+            "description": "missed phish twice as costly as a false alarm",
+            "expected_error_cost": 1697
+          },
+          "C": {
+            "fp_cost": 1,
+            "fn_cost": 5,
+            "description": "missed phish five times as costly as a false alarm",
+            "expected_error_cost": 3803
+          },
+          "D": {
+            "fp_cost": 2,
+            "fn_cost": 5,
+            "description": "false alarm twice as costly, missed phish five times as costly",
+            "expected_error_cost": 4096
+          }
+        }
+      },
+      "crossover_fp_over_fn_cost_ratio": {
+        "Random Forest cheaper than Decision Tree when FP/FN cost ratio >": 1.2258064516129032,
+        "Logistic Regression cheaper than Decision Tree when FP/FN cost ratio >": 5.188405797101449
+      },
+      "scenario_winners": {
+        "A": {
+          "costs": {
+            "Logistic Regression": 1277,
+            "Decision Tree": 988,
+            "Random Forest": 995
+          },
+          "lowest": "Decision Tree"
+        },
+        "B": {
+          "costs": {
+            "Logistic Regression": 2299,
+            "Decision Tree": 1652,
+            "Random Forest": 1697
+          },
+          "lowest": "Decision Tree"
+        },
+        "C": {
+          "costs": {
+            "Logistic Regression": 5365,
+            "Decision Tree": 3644,
+            "Random Forest": 3803
+          },
+          "lowest": "Decision Tree"
+        },
+        "D": {
+          "costs": {
+            "Logistic Regression": 5620,
+            "Decision Tree": 3968,
+            "Random Forest": 4096
+          },
+          "lowest": "Decision Tree"
+        }
+      }
+    }
+  }
+}

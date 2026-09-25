@@ -11,7 +11,7 @@
     "1": "Legitimate",
     "0": "Potential Phishing"
   },
-  "model": "Logistic Regression",
+  "model": "Decision Tree",
   "feature_count": 38,
   "features": [
     "URLLength",
@@ -54,16 +54,16 @@
     "num_suspicious_keywords"
   ],
   "metrics": {
-    "model": "Logistic Regression",
-    "accuracy": 0.972093914302135,
-    "precision": 0.9869270833333333,
-    "recall": 0.9470238392723275,
-    "f1": 0.9665637991277513,
-    "training_score": 0.9717797940558232,
-    "testing_score": 0.972093914302135,
-    "train_test_gap": -0.0003141202463118331,
-    "false_positives": 251,
-    "false_negatives": 1060,
+    "model": "Decision Tree",
+    "accuracy": 0.979948487622129,
+    "precision": 0.9841551978061043,
+    "recall": 0.9685141686241191,
+    "f1": 0.976272040302267,
+    "training_score": 0.9866216108346859,
+    "testing_score": 0.979948487622129,
+    "train_test_gap": 0.006673123212556864,
+    "false_positives": 312,
+    "false_negatives": 630,
     "positive_class": "Potential Phishing (0)",
     "confusion_matrix": {
       "labels": [
@@ -72,27 +72,27 @@
       ],
       "matrix": [
         [
-          18949,
-          1060
+          19379,
+          630
         ],
         [
-          251,
-          26719
+          312,
+          26658
         ]
       ]
     }
   },
   "random_stratified_metrics": {
-    "model": "Logistic Regression",
-    "accuracy": 0.972093914302135,
-    "precision": 0.9869270833333333,
-    "recall": 0.9470238392723275,
-    "f1": 0.9665637991277513,
-    "training_score": 0.9717797940558232,
-    "testing_score": 0.972093914302135,
-    "train_test_gap": -0.0003141202463118331,
-    "false_positives": 251,
-    "false_negatives": 1060,
+    "model": "Decision Tree",
+    "accuracy": 0.979948487622129,
+    "precision": 0.9841551978061043,
+    "recall": 0.9685141686241191,
+    "f1": 0.976272040302267,
+    "training_score": 0.9866216108346859,
+    "testing_score": 0.979948487622129,
+    "train_test_gap": 0.006673123212556864,
+    "false_positives": 312,
+    "false_negatives": 630,
     "positive_class": "Potential Phishing (0)",
     "confusion_matrix": {
       "labels": [
@@ -101,12 +101,12 @@
       ],
       "matrix": [
         [
-          18949,
-          1060
+          19379,
+          630
         ],
         [
-          251,
-          26719
+          312,
+          26658
         ]
       ]
     }
@@ -117,26 +117,36 @@
     "train_domains": 176060,
     "test_domains": 44016,
     "domain_overlap": 0,
-    "accuracy": 0.9719206526551004,
-    "precision": 0.9875817661488144,
-    "recall": 0.9466542568825316,
-    "f1": 0.9666850082537142,
-    "false_positives": 243,
-    "false_negatives": 1089,
+    "accuracy": 0.9793410207222211,
+    "precision": 0.9831443914081146,
+    "recall": 0.968599980405604,
+    "f1": 0.9758179933869614,
+    "false_positives": 339,
+    "false_negatives": 641,
     "positive_class": "Potential Phishing (0)",
     "confusion_matrix": [
       [
-        19325,
-        1089
+        19773,
+        641
       ],
       [
-        243,
-        26780
+        339,
+        26684
       ]
-    ]
+    ],
+    "grouping": "full hostname (legacy; predates PSL-aware registrable-domain integration)",
+    "grouping_authority": "src/domain_split.py is the current authoritative grouping implementation; these figures were produced before it existed",
+    "status": "LEGACY HOSTNAME-GROUPED RESULT - not comparable with registrable-domain figures and not used for model selection"
+  },
+  "train_test_split": {
+    "test_size": 0.2,
+    "stratified": true,
+    "train_records": 187915,
+    "test_records": 46979,
+    "random_state": 42
   },
   "random_state": 42,
-  "training_date_utc": "2026-09-24T09:55:01.503256+00:00",
+  "training_date_utc": "2026-09-24T18:59:47.780304+00:00",
   "pipeline_version": "1.0",
   "cleaning": {
     "input_rows": 235795,
@@ -148,5 +158,197 @@
     "conflicting_label_urls_removed": 2,
     "duplicate_normalized_url_removed": 899,
     "clean_rows": 234894
+  },
+  "dataset_sources": [
+    {
+      "source": "PhiUSIIL_Phishing_URL_Dataset.csv [sha256:a236549cd369]",
+      "file": "PhiUSIIL_Phishing_URL_Dataset.csv",
+      "sha256": "a236549cd369cd80bd478ff8e1779cbf44c58d5c3f79f7a51a1adbed7d06d1c6",
+      "rows": 235795,
+      "columns": [
+        "FILENAME",
+        "URL",
+        "URLLength",
+        "Domain",
+        "DomainLength",
+        "IsDomainIP",
+        "TLD",
+        "URLSimilarityIndex",
+        "CharContinuationRate",
+        "TLDLegitimateProb",
+        "URLCharProb",
+        "TLDLength",
+        "NoOfSubDomain",
+        "HasObfuscation",
+        "NoOfObfuscatedChar",
+        "ObfuscationRatio",
+        "NoOfLettersInURL",
+        "LetterRatioInURL",
+        "NoOfDegitsInURL",
+        "DegitRatioInURL",
+        "NoOfEqualsInURL",
+        "NoOfQMarkInURL",
+        "NoOfAmpersandInURL",
+        "NoOfOtherSpecialCharsInURL",
+        "SpacialCharRatioInURL",
+        "IsHTTPS",
+        "LineOfCode",
+        "LargestLineLength",
+        "HasTitle",
+        "Title",
+        "DomainTitleMatchScore",
+        "URLTitleMatchScore",
+        "HasFavicon",
+        "Robots",
+        "IsResponsive",
+        "NoOfURLRedirect",
+        "NoOfSelfRedirect",
+        "HasDescription",
+        "NoOfPopup",
+        "NoOfiFrame",
+        "HasExternalFormSubmit",
+        "HasSocialNet",
+        "HasSubmitButton",
+        "HasHiddenFields",
+        "HasPasswordField",
+        "Bank",
+        "Pay",
+        "Crypto",
+        "HasCopyrightInfo",
+        "NoOfImage",
+        "NoOfCSS",
+        "NoOfJS",
+        "NoOfSelfRef",
+        "NoOfEmptyRef",
+        "NoOfExternalRef",
+        "label"
+      ],
+      "missing_by_column": {
+        "FILENAME": 0,
+        "URL": 0,
+        "URLLength": 0,
+        "Domain": 0,
+        "DomainLength": 0,
+        "IsDomainIP": 0,
+        "TLD": 0,
+        "URLSimilarityIndex": 0,
+        "CharContinuationRate": 0,
+        "TLDLegitimateProb": 0,
+        "URLCharProb": 0,
+        "TLDLength": 0,
+        "NoOfSubDomain": 0,
+        "HasObfuscation": 0,
+        "NoOfObfuscatedChar": 0,
+        "ObfuscationRatio": 0,
+        "NoOfLettersInURL": 0,
+        "LetterRatioInURL": 0,
+        "NoOfDegitsInURL": 0,
+        "DegitRatioInURL": 0,
+        "NoOfEqualsInURL": 0,
+        "NoOfQMarkInURL": 0,
+        "NoOfAmpersandInURL": 0,
+        "NoOfOtherSpecialCharsInURL": 0,
+        "SpacialCharRatioInURL": 0,
+        "IsHTTPS": 0,
+        "LineOfCode": 0,
+        "LargestLineLength": 0,
+        "HasTitle": 0,
+        "Title": 0,
+        "DomainTitleMatchScore": 0,
+        "URLTitleMatchScore": 0,
+        "HasFavicon": 0,
+        "Robots": 0,
+        "IsResponsive": 0,
+        "NoOfURLRedirect": 0,
+        "NoOfSelfRedirect": 0,
+        "HasDescription": 0,
+        "NoOfPopup": 0,
+        "NoOfiFrame": 0,
+        "HasExternalFormSubmit": 0,
+        "HasSocialNet": 0,
+        "HasSubmitButton": 0,
+        "HasHiddenFields": 0,
+        "HasPasswordField": 0,
+        "Bank": 0,
+        "Pay": 0,
+        "Crypto": 0,
+        "HasCopyrightInfo": 0,
+        "NoOfImage": 0,
+        "NoOfCSS": 0,
+        "NoOfJS": 0,
+        "NoOfSelfRef": 0,
+        "NoOfEmptyRef": 0,
+        "NoOfExternalRef": 0,
+        "label": 0
+      },
+      "label_distribution_raw": {
+        "1": 134850,
+        "0": 100945
+      },
+      "duplicate_urls_raw": 425,
+      "role": "sole production training source",
+      "label_convention": "1 = Legitimate, 0 = Phishing (UCI documentation, verified binary)",
+      "row_level_grain": "URL string plus source label; webpage-derived columns are never used as features"
+    }
+  ],
+  "dataset_role": "sole production training source; no external, candidate, diagnostic-only or research-only dataset contributes rows to the shipped model",
+  "domain_aware_metrics_registrable_psl": {
+    "grouping": "registrable domain, public-suffix aware (PSL ICANN + PRIVATE) via src/domain_split.py / tldextract",
+    "method": "GroupShuffleSplit test_size=0.2, random_state=42, groups from src/domain_split.py (tldextract, PSL private domains included)",
+    "applies_to": "the same classifier configuration as the shipped model (DecisionTreeClassifier, min_samples_leaf=3, random_state=42) refit on the registrable-domain training side; this is NOT a re-evaluation of the shipped serialized artifact, and the shipped artifact was not retrained",
+    "train_rows": 187391,
+    "test_rows": 47503,
+    "train_groups": 157840,
+    "test_groups": 39460,
+    "registrable_domain_overlap": 0,
+    "registrable_domain_overlap_pct_of_union": 0.0,
+    "accuracy": 0.9792013136012462,
+    "precision": 0.9838186086001098,
+    "recall": 0.9673918381377989,
+    "f1": 0.9755360768583172,
+    "false_positives": 324,
+    "false_negatives": 664,
+    "positive_class": "Potential Phishing (0)",
+    "confusion_matrix": {
+      "labels": [
+        "Phishing (0)",
+        "Legitimate (1)"
+      ],
+      "matrix": [
+        [
+          19699,
+          664
+        ],
+        [
+          324,
+          26816
+        ]
+      ]
+    },
+    "source": "models/experiments/baseline_experiment_metrics.json"
+  },
+  "evaluation_splits": {
+    "primary": "stratified URL-level 80/20, random_state=42, normalized-URL duplicates removed before splitting; used for model comparison and selection",
+    "domain_aware_legacy": "full-hostname grouped GroupShuffleSplit 20%, random_state=42 (LEGACY HOSTNAME-GROUPED RESULT)",
+    "domain_aware_registrable_psl": "registrable-domain grouped GroupShuffleSplit 20%, random_state=42; registrable-domain overlap 0"
+  },
+  "known_dataset_limitations": {
+    "canonical_legitimate_class": "degenerate: 134850/134850 rows are HTTPS + www + root path",
+    "legitimate_apex_root_rows": 0,
+    "legitimate_apex_with_path_rows": 0,
+    "legitimate_non_www_subdomain_rows": 0,
+    "legitimate_http_rows": 0,
+    "legitimate_query_rows": 0,
+    "consequence": "the model cannot be evaluated or retrained into correctness on legitimate apex-root, non-www subdomain, HTTP or query URLs with this corpus alone; see docs/apex_representation_test.md",
+    "status": "DATA REPRESENTATION LIMITATION - not a model-configuration problem"
+  },
+  "metadata_provenance": {
+    "original_training_date_utc": "2026-09-24T18:59:47.780304+00:00",
+    "amended_utc": "2026-09-25T20:26:44.240305+00:00",
+    "amendment_reason": "add dataset_sources, dataset_role, PSL-aware registrable-domain evaluation context, and truthful grouping labels for pre-existing metrics",
+    "model_artifact_modified": false,
+    "retraining_performed": false,
+    "metric_values_changed": false,
+    "note": "models/phishguard_pipeline.joblib and models/feature_schema.json were not written. All existing metric values were copied through unchanged."
   }
 }

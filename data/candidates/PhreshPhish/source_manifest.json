@@ -1,0 +1,587 @@
+{
+  "dataset": "PhreshPhish",
+  "official_dataset_url": "https://huggingface.co/datasets/phreshphish/phreshphish",
+  "public_parquet_api": "https://datasets-server.huggingface.co/parquet?dataset=phreshphish/phreshphish",
+  "source_repo_revision": "eabec4b7a66324b79cc8a0ad856d1731dc26fe1a",
+  "license": "CC BY 4.0; dataset card says use should be limited to anti-phishing research",
+  "audit_only_projection": true,
+  "original_html_column_downloaded": false,
+  "included_columns": [
+    "url",
+    "label",
+    "target",
+    "date",
+    "lang",
+    "lang_score",
+    "source_split",
+    "source_shard",
+    "source_row"
+  ],
+  "omitted_source_columns": [
+    "html",
+    "sha256"
+  ],
+  "source_reported_row_count": 666315,
+  "actual_parquet_row_count": 666315,
+  "source_split_counts": {
+    "test": 168060,
+    "train": 498255
+  },
+  "export": {
+    "filename": "phreshphish_url_label_audit.csv",
+    "format": "CSV",
+    "encoding": "UTF-8",
+    "delimiter": ",",
+    "rows": 666315,
+    "columns": 9,
+    "size_bytes": 83790252,
+    "sha256": "ac08bfd0e6c03874f83f5d682266952bb365b8546af12282fae967bca2333cee"
+  },
+  "source_parquet_file_count": 77,
+  "source_parquet_bytes_total": 36576373578,
+  "http_range_bytes_read_during_resume": 17909497,
+  "metadata_range_bytes_read": 5046272,
+  "first_pass_partial_preserved_not_used_for_counts": "phreshphish_url_label_audit.csv.partial",
+  "source_files": [
+    {
+      "split": "test",
+      "filename": "0000.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/test/0000.parquet",
+      "size_bytes": 55340975,
+      "rows": 1000
+    },
+    {
+      "split": "test",
+      "filename": "0001.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/test/0001.parquet",
+      "size_bytes": 349640343,
+      "rows": 5236
+    },
+    {
+      "split": "test",
+      "filename": "0002.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/test/0002.parquet",
+      "size_bytes": 309443239,
+      "rows": 5759
+    },
+    {
+      "split": "test",
+      "filename": "0003.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/test/0003.parquet",
+      "size_bytes": 371223967,
+      "rows": 6558
+    },
+    {
+      "split": "test",
+      "filename": "0004.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/test/0004.parquet",
+      "size_bytes": 378348158,
+      "rows": 7098
+    },
+    {
+      "split": "test",
+      "filename": "0005.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/test/0005.parquet",
+      "size_bytes": 401642506,
+      "rows": 7645
+    },
+    {
+      "split": "test",
+      "filename": "0006.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/test/0006.parquet",
+      "size_bytes": 421478326,
+      "rows": 8111
+    },
+    {
+      "split": "test",
+      "filename": "0007.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/test/0007.parquet",
+      "size_bytes": 454488388,
+      "rows": 8506
+    },
+    {
+      "split": "test",
+      "filename": "0008.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/test/0008.parquet",
+      "size_bytes": 456990152,
+      "rows": 8767
+    },
+    {
+      "split": "test",
+      "filename": "0009.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/test/0009.parquet",
+      "size_bytes": 483918414,
+      "rows": 9025
+    },
+    {
+      "split": "test",
+      "filename": "0010.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/test/0010.parquet",
+      "size_bytes": 530323891,
+      "rows": 9175
+    },
+    {
+      "split": "test",
+      "filename": "0011.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/test/0011.parquet",
+      "size_bytes": 500273254,
+      "rows": 9154
+    },
+    {
+      "split": "test",
+      "filename": "0012.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/test/0012.parquet",
+      "size_bytes": 524605977,
+      "rows": 9241
+    },
+    {
+      "split": "test",
+      "filename": "0013.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/test/0013.parquet",
+      "size_bytes": 497270955,
+      "rows": 9239
+    },
+    {
+      "split": "test",
+      "filename": "0014.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/test/0014.parquet",
+      "size_bytes": 478593835,
+      "rows": 9339
+    },
+    {
+      "split": "test",
+      "filename": "0015.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/test/0015.parquet",
+      "size_bytes": 502425981,
+      "rows": 9517
+    },
+    {
+      "split": "test",
+      "filename": "0016.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/test/0016.parquet",
+      "size_bytes": 523758907,
+      "rows": 9599
+    },
+    {
+      "split": "test",
+      "filename": "0017.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/test/0017.parquet",
+      "size_bytes": 516672678,
+      "rows": 9600
+    },
+    {
+      "split": "test",
+      "filename": "0018.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/test/0018.parquet",
+      "size_bytes": 567766583,
+      "rows": 9628
+    },
+    {
+      "split": "test",
+      "filename": "0019.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/test/0019.parquet",
+      "size_bytes": 504129805,
+      "rows": 9480
+    },
+    {
+      "split": "test",
+      "filename": "0020.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/test/0020.parquet",
+      "size_bytes": 347423824,
+      "rows": 6383
+    },
+    {
+      "split": "train",
+      "filename": "0000.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/train/0000.parquet",
+      "size_bytes": 49639686,
+      "rows": 1000
+    },
+    {
+      "split": "train",
+      "filename": "0001.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/train/0001.parquet",
+      "size_bytes": 322018201,
+      "rows": 5780
+    },
+    {
+      "split": "train",
+      "filename": "0002.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/train/0002.parquet",
+      "size_bytes": 354725131,
+      "rows": 6506
+    },
+    {
+      "split": "train",
+      "filename": "0003.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/train/0003.parquet",
+      "size_bytes": 433568855,
+      "rows": 7127
+    },
+    {
+      "split": "train",
+      "filename": "0004.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/train/0004.parquet",
+      "size_bytes": 403296550,
+      "rows": 7425
+    },
+    {
+      "split": "train",
+      "filename": "0005.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/train/0005.parquet",
+      "size_bytes": 463326261,
+      "rows": 7870
+    },
+    {
+      "split": "train",
+      "filename": "0006.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/train/0006.parquet",
+      "size_bytes": 421664373,
+      "rows": 8077
+    },
+    {
+      "split": "train",
+      "filename": "0007.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/train/0007.parquet",
+      "size_bytes": 470883056,
+      "rows": 8470
+    },
+    {
+      "split": "train",
+      "filename": "0008.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/train/0008.parquet",
+      "size_bytes": 489853296,
+      "rows": 8662
+    },
+    {
+      "split": "train",
+      "filename": "0009.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/train/0009.parquet",
+      "size_bytes": 459330640,
+      "rows": 8783
+    },
+    {
+      "split": "train",
+      "filename": "0010.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/train/0010.parquet",
+      "size_bytes": 496786679,
+      "rows": 9031
+    },
+    {
+      "split": "train",
+      "filename": "0011.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/train/0011.parquet",
+      "size_bytes": 489298015,
+      "rows": 9130
+    },
+    {
+      "split": "train",
+      "filename": "0012.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/train/0012.parquet",
+      "size_bytes": 539858399,
+      "rows": 9260
+    },
+    {
+      "split": "train",
+      "filename": "0013.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/train/0013.parquet",
+      "size_bytes": 516513156,
+      "rows": 9206
+    },
+    {
+      "split": "train",
+      "filename": "0014.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/train/0014.parquet",
+      "size_bytes": 528280696,
+      "rows": 9233
+    },
+    {
+      "split": "train",
+      "filename": "0015.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/train/0015.parquet",
+      "size_bytes": 491305707,
+      "rows": 9219
+    },
+    {
+      "split": "train",
+      "filename": "0016.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/train/0016.parquet",
+      "size_bytes": 481450112,
+      "rows": 9342
+    },
+    {
+      "split": "train",
+      "filename": "0017.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/train/0017.parquet",
+      "size_bytes": 553260365,
+      "rows": 9508
+    },
+    {
+      "split": "train",
+      "filename": "0018.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/train/0018.parquet",
+      "size_bytes": 512599049,
+      "rows": 9408
+    },
+    {
+      "split": "train",
+      "filename": "0019.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/train/0019.parquet",
+      "size_bytes": 531769758,
+      "rows": 9450
+    },
+    {
+      "split": "train",
+      "filename": "0020.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/train/0020.parquet",
+      "size_bytes": 516696945,
+      "rows": 9423
+    },
+    {
+      "split": "train",
+      "filename": "0021.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/train/0021.parquet",
+      "size_bytes": 542055394,
+      "rows": 9450
+    },
+    {
+      "split": "train",
+      "filename": "0022.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/train/0022.parquet",
+      "size_bytes": 519913293,
+      "rows": 9388
+    },
+    {
+      "split": "train",
+      "filename": "0023.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/train/0023.parquet",
+      "size_bytes": 512579781,
+      "rows": 9403
+    },
+    {
+      "split": "train",
+      "filename": "0024.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/train/0024.parquet",
+      "size_bytes": 490380787,
+      "rows": 9445
+    },
+    {
+      "split": "train",
+      "filename": "0025.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/train/0025.parquet",
+      "size_bytes": 522028796,
+      "rows": 9575
+    },
+    {
+      "split": "train",
+      "filename": "0026.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/train/0026.parquet",
+      "size_bytes": 507351379,
+      "rows": 9583
+    },
+    {
+      "split": "train",
+      "filename": "0027.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/train/0027.parquet",
+      "size_bytes": 518847095,
+      "rows": 9646
+    },
+    {
+      "split": "train",
+      "filename": "0028.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/train/0028.parquet",
+      "size_bytes": 519883269,
+      "rows": 9666
+    },
+    {
+      "split": "train",
+      "filename": "0029.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/train/0029.parquet",
+      "size_bytes": 521537139,
+      "rows": 9682
+    },
+    {
+      "split": "train",
+      "filename": "0030.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/train/0030.parquet",
+      "size_bytes": 517131354,
+      "rows": 9692
+    },
+    {
+      "split": "train",
+      "filename": "0031.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/train/0031.parquet",
+      "size_bytes": 546849720,
+      "rows": 9718
+    },
+    {
+      "split": "train",
+      "filename": "0032.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/train/0032.parquet",
+      "size_bytes": 516975992,
+      "rows": 9637
+    },
+    {
+      "split": "train",
+      "filename": "0033.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/train/0033.parquet",
+      "size_bytes": 518462738,
+      "rows": 9664
+    },
+    {
+      "split": "train",
+      "filename": "0034.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/train/0034.parquet",
+      "size_bytes": 523909100,
+      "rows": 9685
+    },
+    {
+      "split": "train",
+      "filename": "0035.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/train/0035.parquet",
+      "size_bytes": 539652745,
+      "rows": 9686
+    },
+    {
+      "split": "train",
+      "filename": "0036.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/train/0036.parquet",
+      "size_bytes": 526415880,
+      "rows": 9630
+    },
+    {
+      "split": "train",
+      "filename": "0037.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/train/0037.parquet",
+      "size_bytes": 528799237,
+      "rows": 9622
+    },
+    {
+      "split": "train",
+      "filename": "0038.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/train/0038.parquet",
+      "size_bytes": 540585532,
+      "rows": 9605
+    },
+    {
+      "split": "train",
+      "filename": "0039.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/train/0039.parquet",
+      "size_bytes": 519866563,
+      "rows": 9547
+    },
+    {
+      "split": "train",
+      "filename": "0040.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/train/0040.parquet",
+      "size_bytes": 516416700,
+      "rows": 9563
+    },
+    {
+      "split": "train",
+      "filename": "0041.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/train/0041.parquet",
+      "size_bytes": 521429018,
+      "rows": 9592
+    },
+    {
+      "split": "train",
+      "filename": "0042.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/train/0042.parquet",
+      "size_bytes": 556020581,
+      "rows": 9602
+    },
+    {
+      "split": "train",
+      "filename": "0043.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/train/0043.parquet",
+      "size_bytes": 517091171,
+      "rows": 9492
+    },
+    {
+      "split": "train",
+      "filename": "0044.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/train/0044.parquet",
+      "size_bytes": 512627533,
+      "rows": 9518
+    },
+    {
+      "split": "train",
+      "filename": "0045.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/train/0045.parquet",
+      "size_bytes": 512117091,
+      "rows": 9561
+    },
+    {
+      "split": "train",
+      "filename": "0046.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/train/0046.parquet",
+      "size_bytes": 513316966,
+      "rows": 9606
+    },
+    {
+      "split": "train",
+      "filename": "0047.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/train/0047.parquet",
+      "size_bytes": 563189367,
+      "rows": 9647
+    },
+    {
+      "split": "train",
+      "filename": "0048.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/train/0048.parquet",
+      "size_bytes": 526941482,
+      "rows": 9513
+    },
+    {
+      "split": "train",
+      "filename": "0049.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/train/0049.parquet",
+      "size_bytes": 493483710,
+      "rows": 9503
+    },
+    {
+      "split": "train",
+      "filename": "0050.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/train/0050.parquet",
+      "size_bytes": 518835096,
+      "rows": 9621
+    },
+    {
+      "split": "train",
+      "filename": "0051.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/train/0051.parquet",
+      "size_bytes": 526031430,
+      "rows": 9641
+    },
+    {
+      "split": "train",
+      "filename": "0052.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/train/0052.parquet",
+      "size_bytes": 510965576,
+      "rows": 9634
+    },
+    {
+      "split": "train",
+      "filename": "0053.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/train/0053.parquet",
+      "size_bytes": 584768973,
+      "rows": 9684
+    },
+    {
+      "split": "train",
+      "filename": "0054.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/train/0054.parquet",
+      "size_bytes": 547814803,
+      "rows": 9483
+    },
+    {
+      "split": "train",
+      "filename": "0055.parquet",
+      "url": "https://huggingface.co/datasets/phreshphish/phreshphish/resolve/refs%2Fconvert%2Fparquet/default/train/0055.parquet",
+      "size_bytes": 20213199,
+      "rows": 361
+    }
+  ],
+  "accessed_utc": "2026-09-25T12:35:19.964191+00:00"
+}

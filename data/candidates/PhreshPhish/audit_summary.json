@@ -1,0 +1,1595 @@
+{
+  "dataset": "PhreshPhish",
+  "downloaded_audit_projection": true,
+  "source_file": "data/candidates/PhreshPhish/phreshphish_url_label_audit.csv",
+  "source_reported_total_rows": 666315,
+  "actual_extracted_rows": 666315,
+  "source_split_label_counts": {
+    "test:benign": 91260,
+    "test:phish": 76800,
+    "train:benign": 276729,
+    "train:phish": 221526
+  },
+  "label_mapping": {
+    "benign": 1,
+    "phish": 0
+  },
+  "class_summary": {
+    "legitimate": {
+      "rows": 367989,
+      "valid_url_rows": 367989,
+      "invalid_url_rows": 0,
+      "missing_url_rows": 0,
+      "apex_root_rows": 7962,
+      "apex_root_pct_of_class": 2.1637,
+      "apex_with_path_rows": 56187,
+      "apex_host_rows_total": 64149,
+      "www_rows": 213332,
+      "other_subdomain_rows": 90489,
+      "ip_hostname_rows": 0,
+      "unknown_registrable_domain_rows": 19,
+      "root_path_rows": 27423,
+      "non_root_path_rows": 340566,
+      "http_rows": 2212,
+      "https_rows": 360036,
+      "other_scheme_rows": 0,
+      "missing_scheme_rows": 5741,
+      "query_present_rows": 68,
+      "fragment_present_rows": 1,
+      "port_rows": 0,
+      "encoded_char_present_rows": 4508,
+      "punycode_present_rows": 61,
+      "suspicious_keyword_present_rows": 22742,
+      "percentages": {
+        "apex_root_rows": 2.1637,
+        "apex_path_rows": 15.2687,
+        "structure_www": 57.9724,
+        "structure_other_subdomain": 24.5901,
+        "structure_ip_hostname": 0.0,
+        "structure_unknown_registrable_domain": 0.0052,
+        "path_root_rows": 7.4521,
+        "path_non_root_rows": 92.5479,
+        "scheme_http": 0.6011,
+        "scheme_https": 97.8388,
+        "scheme_other": 0.0,
+        "scheme_missing": 1.5601,
+        "query_present_rows": 0.0185,
+        "fragment_present_rows": 0.0003,
+        "port_rows": 0.0,
+        "encoded_rows": 1.225,
+        "punycode_rows": 0.0166,
+        "suspicious_keyword_rows": 6.1801,
+        "invalid_url_rows": 0.0,
+        "missing_url_rows": 0.0,
+        "valid_url_rows": 100.0
+      },
+      "numeric_url_metrics": {
+        "url_length": {
+          "mean": 60.5656,
+          "median": 55,
+          "p90": 95,
+          "max": 1414
+        },
+        "domain_length": {
+          "mean": 17.5222,
+          "median": 17,
+          "p90": 24,
+          "max": 92
+        },
+        "subdomain_count": {
+          "mean": 0.8548,
+          "median": 1,
+          "p90": 1,
+          "max": 5
+        }
+      },
+      "raw_counts": {
+        "valid_url_rows": 367989,
+        "structure_apex_non_www": 64149,
+        "path_non_root_rows": 340566,
+        "query_absent_rows": 367921,
+        "fragment_absent_rows": 367988,
+        "scheme_https": 360036,
+        "apex_path_rows": 56187,
+        "encoded_character_total": 44223,
+        "suspicious_keyword_hit_total": 26048,
+        "structure_other_subdomain": 90489,
+        "path_root_rows": 27423,
+        "apex_root_rows": 7962,
+        "structure_www": 213332,
+        "encoded_rows": 4508,
+        "scheme_missing": 5741,
+        "suspicious_keyword_rows": 22742,
+        "scheme_http": 2212,
+        "query_present_rows": 68,
+        "punycode_rows": 61,
+        "structure_unknown_registrable_domain": 19,
+        "fragment_present_rows": 1
+      }
+    },
+    "phishing": {
+      "rows": 298326,
+      "valid_url_rows": 298325,
+      "invalid_url_rows": 1,
+      "missing_url_rows": 0,
+      "apex_root_rows": 74613,
+      "apex_root_pct_of_class": 25.0106,
+      "apex_with_path_rows": 89548,
+      "apex_host_rows_total": 164161,
+      "www_rows": 21191,
+      "other_subdomain_rows": 111592,
+      "ip_hostname_rows": 796,
+      "unknown_registrable_domain_rows": 585,
+      "root_path_rows": 151593,
+      "non_root_path_rows": 146732,
+      "http_rows": 41072,
+      "https_rows": 257253,
+      "other_scheme_rows": 0,
+      "missing_scheme_rows": 0,
+      "query_present_rows": 34749,
+      "fragment_present_rows": 1601,
+      "port_rows": 1051,
+      "encoded_char_present_rows": 11517,
+      "punycode_present_rows": 626,
+      "suspicious_keyword_present_rows": 45592,
+      "percentages": {
+        "apex_root_rows": 25.0106,
+        "apex_path_rows": 30.0168,
+        "structure_www": 7.1033,
+        "structure_other_subdomain": 37.4061,
+        "structure_ip_hostname": 0.2668,
+        "structure_unknown_registrable_domain": 0.1961,
+        "path_root_rows": 50.8145,
+        "path_non_root_rows": 49.1851,
+        "scheme_http": 13.7675,
+        "scheme_https": 86.2322,
+        "scheme_other": 0.0,
+        "scheme_missing": 0.0,
+        "query_present_rows": 11.648,
+        "fragment_present_rows": 0.5367,
+        "port_rows": 0.3523,
+        "encoded_rows": 3.8605,
+        "punycode_rows": 0.2098,
+        "suspicious_keyword_rows": 15.2826,
+        "invalid_url_rows": 0.0003,
+        "missing_url_rows": 0.0,
+        "valid_url_rows": 99.9997
+      },
+      "numeric_url_metrics": {
+        "url_length": {
+          "mean": 55.3669,
+          "median": 39,
+          "p90": 88,
+          "max": 25523
+        },
+        "domain_length": {
+          "mean": 24.5539,
+          "median": 23,
+          "p90": 37,
+          "max": 114
+        },
+        "subdomain_count": {
+          "mean": 0.4905,
+          "median": 0,
+          "p90": 1,
+          "max": 13
+        }
+      },
+      "raw_counts": {
+        "valid_url_rows": 298325,
+        "structure_apex_non_www": 164161,
+        "path_non_root_rows": 146732,
+        "query_absent_rows": 263576,
+        "fragment_absent_rows": 296724,
+        "scheme_http": 41072,
+        "apex_path_rows": 89548,
+        "encoded_character_total": 59296,
+        "suspicious_keyword_hit_total": 51013,
+        "structure_other_subdomain": 111592,
+        "scheme_https": 257253,
+        "path_root_rows": 151593,
+        "query_present_rows": 34749,
+        "apex_root_rows": 74613,
+        "suspicious_keyword_rows": 45592,
+        "structure_www": 21191,
+        "structure_ip_hostname": 796,
+        "port_rows": 1051,
+        "encoded_rows": 11517,
+        "punycode_rows": 626,
+        "structure_unknown_registrable_domain": 585,
+        "fragment_present_rows": 1601,
+        "invalid_url_rows": 1
+      }
+    }
+  },
+  "raw_exact_duplicate_rows": 0,
+  "valid_normalized_unique_urls_before_project_cleaner": 666271,
+  "normalized_duplicate_rows_before_project_cleaner": 43,
+  "normalized_duplicate_groups": 43,
+  "normalized_label_conflict_groups_before_project_cleaner": 1,
+  "project_cleaner": {
+    "counts": {
+      "input_rows": 666315,
+      "missing_url_removed": 0,
+      "missing_label_removed": 0,
+      "empty_url_removed": 0,
+      "invalid_url_removed": 1,
+      "invalid_or_inconsistent_label_removed": 0,
+      "conflicting_label_url_count": 1,
+      "conflicting_label_urls_removed": 2,
+      "duplicate_normalized_url_removed": 42,
+      "clean_rows": 666270
+    },
+    "clean_rows_by_project_label": {
+      "1": 367987,
+      "0": 298283
+    }
+  },
+  "canonical_comparison": {
+    "canonical_raw_rows": 235795,
+    "canonical_clean_rows": 234894,
+    "canonical_cleaning_counts": {
+      "input_rows": 235795,
+      "missing_url_removed": 0,
+      "missing_label_removed": 0,
+      "empty_url_removed": 0,
+      "invalid_url_removed": 0,
+      "invalid_or_inconsistent_label_removed": 0,
+      "conflicting_label_url_count": 1,
+      "conflicting_label_urls_removed": 2,
+      "duplicate_normalized_url_removed": 899,
+      "clean_rows": 234894
+    },
+    "normalized_unique_overlap_after_cleaning_both": 1579,
+    "overlap_by_phresh_label": {
+      "0": 152,
+      "1": 1427
+    },
+    "class_conflict_urls": 8,
+    "conflict_examples": {
+      "https://www.brooklinen.com/": {
+        "phresh_label": 0,
+        "canonical_label": 1
+      },
+      "http://www.coinbase.com/": {
+        "phresh_label": 1,
+        "canonical_label": 0
+      },
+      "https://www.bundestag.de/": {
+        "phresh_label": 0,
+        "canonical_label": 1
+      },
+      "https://www.poncevacay.com/": {
+        "phresh_label": 0,
+        "canonical_label": 1
+      },
+      "https://www.tawk.to/": {
+        "phresh_label": 0,
+        "canonical_label": 1
+      },
+      "https://www.unesco.gov.ph/": {
+        "phresh_label": 0,
+        "canonical_label": 1
+      },
+      "https://www.los40.com.gt/": {
+        "phresh_label": 0,
+        "canonical_label": 1
+      },
+      "https://www.southpointfinancial.com/": {
+        "phresh_label": 0,
+        "canonical_label": 1
+      }
+    }
+  },
+  "public_suffix_list": {
+    "url": "https://publicsuffix.org/list/public_suffix_list.dat",
+    "sha256": "6c03e7de2dc08e6a5a89027f1c9f841debb611b59ba9c2a9973587a514b304d9",
+    "includes_icann_and_private_rules": true
+  },
+  "normalization": "src.feature_schema.normalize_url and src.data_loader.clean_url_labels; no URL destinations visited",
+  "samples": {
+    "legitimate_apex_with_path": [
+      {
+        "url": "https://calculatodo.com/en/count-days-between-dates",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "0"
+      },
+      {
+        "url": "https://cooktopcove.com/2024/09/23/you-can-always-count-on-this-recipeits-the-first-thing-people-finish-at-gatherings/",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "1"
+      },
+      {
+        "url": "https://punktum.dk/en/customer-service",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "17"
+      },
+      {
+        "url": "https://porch.com/checkout/start",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "27"
+      },
+      {
+        "url": "https://time.is/Wisconsin",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "36"
+      },
+      {
+        "url": "https://pypi.org/project/numpy/",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "38"
+      },
+      {
+        "url": "https://x.com/atlhawks",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "51"
+      },
+      {
+        "url": "https://missav.ws/ja/search/%E7%B4%A0%E4%BA%BA%E7%84%A1%E4%BF%AE%E6%AD%A3%E5%8B%95%E7%94%BB%20%E7%AC%AC5%E5%BC%BE",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "54"
+      },
+      {
+        "url": "https://chescaleigh.myshopify.com/collections/leopards-eating-faces",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "60"
+      },
+      {
+        "url": "https://operationbroadway.com/tickets/",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "67"
+      },
+      {
+        "url": "https://nerdynuts.com/collections/all-flavors",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "73"
+      },
+      {
+        "url": "https://veronikalove.com/auth/index/login",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "114"
+      },
+      {
+        "url": "https://doctorzebra.com/prez/z_x45_trump_height_weight_g.htm",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "118"
+      },
+      {
+        "url": "https://singleinthevillages.com/content.aspx",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "123"
+      },
+      {
+        "url": "https://epicureanusa.com/collections/cutting-boards",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "134"
+      },
+      {
+        "url": "https://luce-gas.it/guida/contatore/luce/codice-pod",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "154"
+      },
+      {
+        "url": "https://exploresetoyota.com/tacoma/",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "166"
+      },
+      {
+        "url": "https://printify.com/blog/how-to-sell-digital-art/",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "176"
+      },
+      {
+        "url": "https://y2mate.lol/es85/",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "196"
+      },
+      {
+        "url": "https://bstock.com/all-auctions/",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "222"
+      }
+    ],
+    "legitimate_subdomain": [
+      {
+        "url": "https://my.lafarmbureau.com/insurance/home",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "2"
+      },
+      {
+        "url": "https://html5.adsrvr.org/amhavjr/wnbjgdc/6wakhnal/index.html",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "3"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/History_of_mathematics",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "9"
+      },
+      {
+        "url": "https://pjilaw.bamboohr.com/employees/files/employeefilespage",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "14"
+      },
+      {
+        "url": "https://forums.whirlpool.net.au/archive/158814",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "32"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Risky_Business",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "34"
+      },
+      {
+        "url": "https://dakotacountylibrary.libcal.com/",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "43"
+      },
+      {
+        "url": "https://s0.2mdn.net/sadbundle/7743226238435005383/300x600/index.html",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "47"
+      },
+      {
+        "url": "https://aws.amazon.com/amplify/",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "50"
+      },
+      {
+        "url": "https://ncode.syosetu.com/n6868jy/395/",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "53"
+      },
+      {
+        "url": "https://s0.2mdn.net/sadbundle/1718530358797004188/index.html",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "69"
+      },
+      {
+        "url": "en.wikipedia.org/wiki/Virgin_Australia",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "74"
+      },
+      {
+        "url": "https://player.vimeo.com/video/884176531",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "76"
+      },
+      {
+        "url": "https://timesofindia.indiatimes.com/astrology/horoscope/aries",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "88"
+      },
+      {
+        "url": "https://marvelcinematicuniverse.fandom.com/wiki/Wakanda",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "90"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Coors_Brewing_Company",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "91"
+      },
+      {
+        "url": "https://nwmissouri.discoveredu.ai/",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "101"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Exoskeleton_(human)",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "106"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Kyoto",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "122"
+      },
+      {
+        "url": "https://skyline.my.workfront.com/qstile",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "139"
+      }
+    ],
+    "legitimate_apex_root": [
+      {
+        "url": "https://elbow.co.uk/",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "4"
+      },
+      {
+        "url": "https://mynavi-ms.jp/",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "259"
+      },
+      {
+        "url": "https://schoolcafek12.com/",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "260"
+      },
+      {
+        "url": "https://roanoketexas.com/",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "416"
+      },
+      {
+        "url": "https://brattysisters.com/",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "539"
+      },
+      {
+        "url": "https://wordscounter.net/",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "725"
+      },
+      {
+        "url": "https://dekalbtax.org/",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "755"
+      },
+      {
+        "url": "https://hustle.com/",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "900"
+      },
+      {
+        "url": "https://safestyle.com.au/",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "992"
+      },
+      {
+        "url": "https://techtopind.com/",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0001.parquet",
+        "source_row": "61"
+      },
+      {
+        "url": "https://dealerbuilt.com/",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0001.parquet",
+        "source_row": "122"
+      },
+      {
+        "url": "https://benlomandconnect.com/",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0001.parquet",
+        "source_row": "146"
+      },
+      {
+        "url": "https://charmthaitx.com/",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0001.parquet",
+        "source_row": "193"
+      },
+      {
+        "url": "https://firefaucet.win/",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0001.parquet",
+        "source_row": "247"
+      },
+      {
+        "url": "quordlegame.net/",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0001.parquet",
+        "source_row": "280"
+      },
+      {
+        "url": "https://yourplanmanager.com.au/",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0001.parquet",
+        "source_row": "351"
+      },
+      {
+        "url": "https://secondmile.org/",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0001.parquet",
+        "source_row": "353"
+      },
+      {
+        "url": "https://freecash.com/",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0001.parquet",
+        "source_row": "399"
+      },
+      {
+        "url": "https://eriemarinesales.com/",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0001.parquet",
+        "source_row": "592"
+      },
+      {
+        "url": "https://irontrapgarage.com/",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0001.parquet",
+        "source_row": "626"
+      }
+    ],
+    "phishing_with_path": [
+      {
+        "url": "http://coolfocus.info/google.php",
+        "label": "phish",
+        "target": "betwinner",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "5"
+      },
+      {
+        "url": "https://ucion.zaolir.cfd/pageamazon",
+        "label": "phish",
+        "target": "sumitomomitsuibank",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "6"
+      },
+      {
+        "url": "https://defaultlimited.blob.core.windows.net/kuz-gleis4/kuz-gleis4.html",
+        "label": "phish",
+        "target": "microsoft",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "10"
+      },
+      {
+        "url": "https://ficovenexpress.com/rhoudes/daddddy/h0tmail",
+        "label": "phish",
+        "target": "microsoft",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "33"
+      },
+      {
+        "url": "https://github.com/darklegiongwin/canvaproaccess",
+        "label": "phish",
+        "target": "canva",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "44"
+      },
+      {
+        "url": "https://cdn.readkaijuno8.com/8d215bcc6f704584969fc7a4be984463:fr0st/roundcube/webmail_cpanel.html",
+        "label": "phish",
+        "target": "genericwebmailphishing",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "68"
+      },
+      {
+        "url": "https://cypostatu.click/index.html",
+        "label": "phish",
+        "target": "terpel",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "75"
+      },
+      {
+        "url": "https://confirmationportal.com/cde2feda-a864-42b3-839c-7a2fa5508400/a/0c6ea613-19e3-408d-b644-ef80407a16a5/ccp?lang=it-it&lid=c338ad20-3c5d-4297-92a2-7573c6ba6cbd",
+        "label": "phish",
+        "target": "wetransfer",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "84"
+      },
+      {
+        "url": "https://secure-verify-reserve.com/978534794",
+        "label": "phish",
+        "target": "bookingcom",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "92"
+      },
+      {
+        "url": "https://www.autoinnoware.pl/z0f76a1d14fd21a8fb5fd0d03e0fdc3d3cedae52f?wsidchk=7062371&pdata=https%253a%252f%252fwww.autoinnoware.pl%252f~vh12993%252fe-betaling%252fpunktum-dot_dk%252flog.php&id=7fa3b767c460b54a2be4d49030b349c7&ts=1761949239",
+        "label": "phish",
+        "target": "punktum_dk",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "95"
+      },
+      {
+        "url": "https://danasnje.com/metamask-uvodi-multichain-racune-upravljanje-evm-solana-i-uskoro-bitcoin-adresama-iz-jednog-mesta",
+        "label": "phish",
+        "target": "metamask",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "97"
+      },
+      {
+        "url": "https://tnzbjahyem.cc/pakage",
+        "label": "phish",
+        "target": "grandlisboamacau",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "104"
+      },
+      {
+        "url": "https://zgwvnwvpmu.ehvdiuf.top/jktnc",
+        "label": "phish",
+        "target": "naver",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "107"
+      },
+      {
+        "url": "https://cloudprivacyon.com/wp-content/plugins",
+        "label": "phish",
+        "target": "ledger",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "115"
+      },
+      {
+        "url": "https://produtos.sensebike.com.br/.libre/auth/",
+        "label": "phish",
+        "target": "bdo",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "121"
+      },
+      {
+        "url": "https://e7rmtin3r4b.com/3oqpydn572gzqnrzozqymljxez1gvw",
+        "label": "phish",
+        "target": "rakuten",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "127"
+      },
+      {
+        "url": "https://tity-apaleo.com/account/login",
+        "label": "phish",
+        "target": "apaleo",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "129"
+      },
+      {
+        "url": "https://www.xakjybd.com/rok1nkuten",
+        "label": "phish",
+        "target": "rakuten",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "130"
+      },
+      {
+        "url": "https://largely-helpful-swift.global.ssl.fastly.net/oti0mmiynwm0yzc5odi2zdm2n2ezmg==/f-en-wb.php",
+        "label": "phish",
+        "target": "facebook",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "140"
+      },
+      {
+        "url": "https://fundraisinglnc.com/multiauthentication",
+        "label": "phish",
+        "target": "intermedia",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "146"
+      }
+    ],
+    "phishing_with_query": [
+      {
+        "url": "https://jiu-jitsuinbridport.blogspot.pt/?m=1",
+        "label": "phish",
+        "target": "google",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "7"
+      },
+      {
+        "url": "https://50kk-for-you.blogspot.com.es/?m=1&fbclid=pazxh0bgnhzw0cmteaaaevzml0si3kuv1trzypwb403vyksxm-xhej0fsfrqg1cx17evp3kjhle0_zhg_aem_2wc7t47lcrbubgdyekovcg",
+        "label": "phish",
+        "target": "roblox",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "25"
+      },
+      {
+        "url": "https://wi-guy-in-tx.blogspot.com.tr/?m=1",
+        "label": "phish",
+        "target": "google",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "48"
+      },
+      {
+        "url": "https://livegilfcams.blogspot.si/?m=1",
+        "label": "phish",
+        "target": "google",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "58"
+      },
+      {
+        "url": "https://trezor-wallet-io.blogspot.kr/?m=1",
+        "label": "phish",
+        "target": "trezor",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "59"
+      },
+      {
+        "url": "https://fb-buddy.blogspot.jp/?m=1",
+        "label": "phish",
+        "target": "google",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "62"
+      },
+      {
+        "url": "https://1369836729834762938468293496234.blogspot.tw/?m=1",
+        "label": "phish",
+        "target": "facebook",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "63"
+      },
+      {
+        "url": "https://littlethingsbymirandac.blogspot.com.br/?m=1",
+        "label": "phish",
+        "target": "google",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "64"
+      },
+      {
+        "url": "https://instagram-oficial.blogspot.hk/?m=1",
+        "label": "phish",
+        "target": "instagram",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "65"
+      },
+      {
+        "url": "https://geprofilegasovensite.blogspot.dk/?m=1",
+        "label": "phish",
+        "target": "google",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "70"
+      },
+      {
+        "url": "https://be-finance.blogspot.md/?m=1",
+        "label": "phish",
+        "target": "argenta",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "72"
+      },
+      {
+        "url": "https://118.107.24.206:47777/?url=470128.cc",
+        "label": "phish",
+        "target": "grandlisboamacau",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "79"
+      },
+      {
+        "url": "https://frederic92110.blogspot.qa/?m=1",
+        "label": "phish",
+        "target": "google",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "82"
+      },
+      {
+        "url": "https://mark-dot-net.blogspot.am/?m=1",
+        "label": "phish",
+        "target": "google",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "86"
+      },
+      {
+        "url": "https://fullfreepornflix.blogspot.ug/?m=1",
+        "label": "phish",
+        "target": "google",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "98"
+      },
+      {
+        "url": "https://david-beckham-gallery.blogspot.ru/?m=1",
+        "label": "phish",
+        "target": "google",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "99"
+      },
+      {
+        "url": "https://vbux2025new.blogspot.sn/?m=1",
+        "label": "phish",
+        "target": "epicgames",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "124"
+      },
+      {
+        "url": "http://nice-tits-boobs.blogspot.ch/?m=1",
+        "label": "phish",
+        "target": "google",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "126"
+      },
+      {
+        "url": "https://kgm-sorl.blogspot.be/?m=1",
+        "label": "phish",
+        "target": "hgsturkey",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "132"
+      },
+      {
+        "url": "https://111twittertools.blogspot.com.br/?m=1",
+        "label": "phish",
+        "target": "google",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "151"
+      }
+    ],
+    "phishing_apex_root": [
+      {
+        "url": "https://treser-bridge.pages.dev",
+        "label": "phish",
+        "target": "trezor",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "8"
+      },
+      {
+        "url": "https://yrytfhgftyrdttt.pages.dev",
+        "label": "phish",
+        "target": "safaricom",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "19"
+      },
+      {
+        "url": "https://support-phantomwallet.pages.dev",
+        "label": "phish",
+        "target": "phantom",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "20"
+      },
+      {
+        "url": "https://begin--strt.pages.dev",
+        "label": "phish",
+        "target": "trezor",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "35"
+      },
+      {
+        "url": "https://app-ledger-cloud-sso.typedream.app",
+        "label": "phish",
+        "target": "ledger",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "42"
+      },
+      {
+        "url": "https://roobin-hudlogin.pages.dev",
+        "label": "phish",
+        "target": "robinhood",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "45"
+      },
+      {
+        "url": "https://begin-start-ios.pages.dev",
+        "label": "phish",
+        "target": "trezor",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "61"
+      },
+      {
+        "url": "https://start-blocke-fii-en.pages.dev",
+        "label": "phish",
+        "target": "blockfi",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "66"
+      },
+      {
+        "url": "http://coindrop.icu/",
+        "label": "phish",
+        "target": "totalav",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "85"
+      },
+      {
+        "url": "http://88tkyou.vip",
+        "label": "phish",
+        "target": "ebay",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "87"
+      },
+      {
+        "url": "https://bridges-faqs.pages.dev",
+        "label": "phish",
+        "target": "trezor",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "93"
+      },
+      {
+        "url": "http://cupartinoelectric.com/",
+        "label": "phish",
+        "target": "other",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "102"
+      },
+      {
+        "url": "https://5710dd.cc",
+        "label": "phish",
+        "target": "bet365",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "116"
+      },
+      {
+        "url": "https://en-walle-trezr.pages.dev",
+        "label": "phish",
+        "target": "trezor",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "119"
+      },
+      {
+        "url": "http://hellofishshop.store/",
+        "label": "phish",
+        "target": "other",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "161"
+      },
+      {
+        "url": "https://alemanhahb.digital",
+        "label": "phish",
+        "target": "habbohotel",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "171"
+      },
+      {
+        "url": "https://wienerdogclaim.pages.dev",
+        "label": "phish",
+        "target": "genericcryptophish",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "178"
+      },
+      {
+        "url": "http://colitco.com/",
+        "label": "phish",
+        "target": "other",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "183"
+      },
+      {
+        "url": "https://trezr-io--en-login.pages.dev",
+        "label": "phish",
+        "target": "trezor",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "191"
+      },
+      {
+        "url": "https://view-suitrezor-app.pages.dev",
+        "label": "phish",
+        "target": "trezor",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "203"
+      }
+    ],
+    "legitimate_www": [
+      {
+        "url": "https://www.kenhub.com/en/library/anatomy/dorsal-root-ganglion",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "11"
+      },
+      {
+        "url": "https://www.mytutor.co.uk/answers/12663/GCSE/Geography/What-are-the-differences-between-the-types-of-plate-boundaries/",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "12"
+      },
+      {
+        "url": "https://www.ebay.com/b/Charcoal-Pencils-Charcoals/28108/bn_57092227",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "13"
+      },
+      {
+        "url": "https://www.berncoclerk.gov/",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "15"
+      },
+      {
+        "url": "https://www.postoffice.co.za/Questions/Postalrates.pdf",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "16"
+      },
+      {
+        "url": "https://www.sumissura.com/en/blog/blouse-vs-shirt",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "18"
+      },
+      {
+        "url": "https://www.usdish.com/news/blog/how-to-program-a-dish-network-remote-to-your-tv",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "21"
+      },
+      {
+        "url": "https://www.alternet.org/louis-dejoy-usps-2670381450/",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "24"
+      },
+      {
+        "url": "https://www.wrangler.com/shop/men-shirts-button-downs",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "26"
+      },
+      {
+        "url": "https://www.landmarktrust.org.uk/search-and-book/a-z/",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "28"
+      },
+      {
+        "url": "https://www.kayak.com/Cheap-Chicago-Car-Rentals.12514.cars.ksp",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "29"
+      },
+      {
+        "url": "https://www.malaysiastock.biz/Market-Watch.aspx",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "30"
+      },
+      {
+        "url": "https://www.ikea.com/jp/ja/cat/tv-media-furniture-10475/",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "31"
+      },
+      {
+        "url": "https://www.investopedia.com/terms/o/organizational-behavior.asp",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "37"
+      },
+      {
+        "url": "https://www.indmoney.com/us-stocks/dividends/ko-coca-cola-company-the-dividend",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "40"
+      },
+      {
+        "url": "https://www.cvshealth.com/services/health-insurance/individual-and-family-plans.html",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "41"
+      },
+      {
+        "url": "https://www.sportscasting.com/news/march-madness-2025-dates-locations-top-seeds-schedule/",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "49"
+      },
+      {
+        "url": "https://www.wisconsinhistory.org/Records/Article/CS2390",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "52"
+      },
+      {
+        "url": "https://www.coursera.org/articles/juris-doctor-degree",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "57"
+      },
+      {
+        "url": "https://www.lexplain.it/codice-tributo-1001/",
+        "label": "benign",
+        "target": "",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "71"
+      }
+    ],
+    "phishing_subdomain": [
+      {
+        "url": "https://www1.cmetricsfluence.robinhood-crypto.online/",
+        "label": "phish",
+        "target": "robinhood",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "22"
+      },
+      {
+        "url": "http://trezr-bridg-begin.tem3.io",
+        "label": "phish",
+        "target": "trezor",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "23"
+      },
+      {
+        "url": "https://monodizo.blogspot.cz",
+        "label": "phish",
+        "target": "hasbro",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "56"
+      },
+      {
+        "url": "https://trezor-io-sttart.blogspot.com.tr",
+        "label": "phish",
+        "target": "trezor",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "78"
+      },
+      {
+        "url": "https://robiux50ksxe.blogspot.hu",
+        "label": "phish",
+        "target": "roblox",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "96"
+      },
+      {
+        "url": "http://imap4d-indica.kleinanzegien.de",
+        "label": "phish",
+        "target": "kleinanzeigen",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "108"
+      },
+      {
+        "url": "https://secure.auth.do-not-reply.kleianzeigena.de",
+        "label": "phish",
+        "target": "kleinanzeigen",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "111"
+      },
+      {
+        "url": "https://docs-upholdlogin.blogspot.pt",
+        "label": "phish",
+        "target": "uphold",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "135"
+      },
+      {
+        "url": "http://mobilewebservices.kleinanzegien.de",
+        "label": "phish",
+        "target": "kleinanzeigen",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "136"
+      },
+      {
+        "url": "https://746ealy8.5mgfuk4294.com",
+        "label": "phish",
+        "target": "grandlisboamacau",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "168"
+      },
+      {
+        "url": "https://casibom.sitesi4.com",
+        "label": "phish",
+        "target": "casibom",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "177"
+      },
+      {
+        "url": "https://tv.gaiaservice.fr",
+        "label": "phish",
+        "target": "netflix",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "182"
+      },
+      {
+        "url": "https://monodizo.blogspot.co.id",
+        "label": "phish",
+        "target": "hasbro",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "184"
+      },
+      {
+        "url": "http://facebookvideos-f.blogspot.ru",
+        "label": "phish",
+        "target": "youtube",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "195"
+      },
+      {
+        "url": "https://factura-08726.blogspot.com.uy",
+        "label": "phish",
+        "target": "transip",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "246"
+      },
+      {
+        "url": "http://vrbo.luxurylairs.net",
+        "label": "phish",
+        "target": "vrbo",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "268"
+      },
+      {
+        "url": "http://logontest.kleinanzegien.de",
+        "label": "phish",
+        "target": "kleinanzeigen",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "272"
+      },
+      {
+        "url": "https://ingiphone2025.atrikom.de",
+        "label": "phish",
+        "target": "inggroup",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "282"
+      },
+      {
+        "url": "https://facebookcheatgames.blogspot.li",
+        "label": "phish",
+        "target": "facebook",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "293"
+      },
+      {
+        "url": "https://nibhtball.weebly.com",
+        "label": "phish",
+        "target": "rackspace",
+        "split": "test",
+        "source_shard": "0000.parquet",
+        "source_row": "340"
+      }
+    ]
+  },
+  "invalid_url_examples": [
+    {
+      "url": "https://npaiaajvaxrjmmhagh.com∕[-randomstring1-]∕[-randomstring2-]∕[-randomstring3-]@npaiaajvaxrjmmhagh.𝕧𝕚𝕣𝕡𝕞𝕠𝕛.cn/caonima=[-randomstring4-].co.jp/",
+      "label": "phish",
+      "reason": "'npaiaajvaxrjmmhagh.𝕧𝕚𝕣𝕡𝕞𝕠𝕛.cn' does not appear to be an IPv4 or IPv6 address"
+    }
+  ]
+}

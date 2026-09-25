@@ -7,4 +7,9 @@ services:
     buildCommand: pip install -r requirements.txt
     startCommand: uvicorn backend.app:app --host 0.0.0.0 --port $PORT
     healthCheckPath: /api/health
+    # The model artifact under models/ is committed to the repository, so the
+    # service starts from the verified pipeline. Nothing is retrained at deploy
+    # time and the training dataset is not required at runtime.
+    # No secrets or environment variables are required. If a future revision adds
+    # one, document it here rather than committing a value.
     autoDeploy: true

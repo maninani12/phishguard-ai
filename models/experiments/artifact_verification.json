@@ -1,0 +1,109 @@
+{
+  "pipeline_steps": [
+    "preprocess",
+    "model"
+  ],
+  "classifier_type": "DecisionTreeClassifier",
+  "classifier_params": {
+    "criterion": "gini",
+    "max_depth": null,
+    "max_features": null,
+    "min_samples_leaf": 3,
+    "random_state": 42
+  },
+  "metadata_model_matches_artifact": true,
+  "feature_count": 38,
+  "feature_order_matches_metadata": true,
+  "feature_order_matches_schema_file": true,
+  "feature_count_matches_metadata": true,
+  "preprocessing": {
+    "type": "ColumnTransformer",
+    "numeric_features": 37,
+    "categorical_features": [
+      "TLD"
+    ],
+    "numeric_steps": [
+      "tuple",
+      "tuple"
+    ],
+    "categorical_encoder": "OneHotEncoder"
+  },
+  "transformed_feature_dimension": 545,
+  "label_mapping": {
+    "1": "Legitimate",
+    "0": "Potential Phishing"
+  },
+  "model_classes": [
+    0,
+    1
+  ],
+  "dataset": "UCI PhiUSIIL Phishing URL Dataset (ID 967)",
+  "dataset_sources": null,
+  "metadata_gaps": [
+    "metadata has no 'dataset_sources' block; the shipped metadata predates the current src/train.py writer. Dataset identity is attested only by dataset + dataset_sha256.",
+    "domain_aware_metrics has no 'grouping' key: those figures are LEGACY HOSTNAME-GROUPED RESULTS."
+  ],
+  "dataset_sha256": "a236549cd369cd80bd478ff8e1779cbf44c58d5c3f79f7a51a1adbed7d06d1c6",
+  "dataset_records_raw": 235795,
+  "dataset_records_clean": 234894,
+  "class_distribution_clean": {
+    "1": 134849,
+    "0": 100045
+  },
+  "metrics": {
+    "accuracy": 0.979948487622129,
+    "precision": 0.9841551978061043,
+    "recall": 0.9685141686241191,
+    "f1": 0.976272040302267,
+    "false_positives": 312,
+    "false_negatives": 630
+  },
+  "confusion_matrix": [
+    [
+      19379,
+      630
+    ],
+    [
+      312,
+      26658
+    ]
+  ],
+  "random_state": 42,
+  "training_date_utc": "2026-09-24T18:59:47.780304+00:00",
+  "train_test_split": {
+    "test_size": 0.2,
+    "stratified": true,
+    "train_records": 187915,
+    "test_records": 46979,
+    "random_state": 42
+  },
+  "domain_aware_methodology": {
+    "recorded_grouping_key": "ABSENT -> legacy full-hostname grouping",
+    "train_rows": 187457,
+    "test_rows": 47437,
+    "train_domains": 176060,
+    "test_domains": 44016,
+    "domain_overlap": 0,
+    "status": "LEGACY HOSTNAME-GROUPED RESULT - predates PSL integration; not comparable with registrable-domain figures and not used for model selection in this phase"
+  },
+  "cleaning": {
+    "input_rows": 235795,
+    "missing_url_removed": 0,
+    "missing_label_removed": 0,
+    "empty_url_removed": 0,
+    "invalid_url_removed": 0,
+    "invalid_or_inconsistent_label_removed": 0,
+    "conflicting_label_urls_removed": 2,
+    "duplicate_normalized_url_removed": 899,
+    "clean_rows": 234894
+  },
+  "hashes": {
+    "production_pipeline_sha256": "882b1f5de934cb0a190f0f9461ea744b1e96cb42e9a3f539a60279662d724df1",
+    "model_metadata_sha256": "c1f239c40b57aac009092e6d77cfaecef3207f4d7c852601118f20a000672d2c",
+    "feature_schema_sha256": "dfbd5a29ec41cbc6b39b507af55052cb3af243122a62121575f2fb67542cb07d",
+    "canonical_dataset_sha256": "a236549cd369cd80bd478ff8e1779cbf44c58d5c3f79f7a51a1adbed7d06d1c6"
+  },
+  "verification_failures": [],
+  "verified": true,
+  "decision": "KEEP existing production artifact: the cost-policy winner (Decision Tree, min_samples_leaf=3, random_state=42) is the same family and configuration as the shipped model, so no replacement is warranted."
+}

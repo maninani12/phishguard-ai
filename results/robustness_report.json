@@ -95,7 +95,7 @@
         }
       }
     ],
-    "selected_model": "Logistic Regression"
+    "selected_model": "Decision Tree"
   },
   "domain_aware": {
     "train_rows": 187457,
@@ -103,21 +103,21 @@
     "train_domains": 176060,
     "test_domains": 44016,
     "domain_overlap": 0,
-    "accuracy": 0.9719206526551004,
-    "precision": 0.9875817661488144,
-    "recall": 0.9466542568825316,
-    "f1": 0.9666850082537142,
-    "false_positives": 243,
-    "false_negatives": 1089,
+    "accuracy": 0.9793410207222211,
+    "precision": 0.9831443914081146,
+    "recall": 0.968599980405604,
+    "f1": 0.9758179933869614,
+    "false_positives": 339,
+    "false_negatives": 641,
     "positive_class": "Potential Phishing (0)",
     "confusion_matrix": [
       [
-        19325,
-        1089
+        19773,
+        641
       ],
       [
-        243,
-        26780
+        339,
+        26684
       ]
     ]
   },
@@ -132,10 +132,10 @@
     {
       "group": "bare_root_urls",
       "held_out_count": 41321,
-      "accuracy": 0.9690714164710438,
-      "precision": 0.9815101289134438,
-      "recall": 0.9284370427147934,
-      "f1": 0.9542361956599584,
+      "accuracy": 0.9773964812081024,
+      "precision": 0.9777793604444128,
+      "recall": 0.9566580726081806,
+      "f1": 0.9671034094111017,
       "class_distribution": {
         "1": 26970,
         "0": 14351
@@ -144,10 +144,10 @@
     {
       "group": "non_www_root_urls",
       "held_out_count": 6599,
-      "accuracy": 0.8643733899075617,
+      "accuracy": 0.9233217154114259,
       "precision": 1.0,
-      "recall": 0.8643733899075617,
-      "f1": 0.9272535154027473,
+      "recall": 0.9233217154114259,
+      "f1": 0.9601323668452568,
       "class_distribution": {
         "0": 6599
       }
@@ -155,10 +155,10 @@
     {
       "group": "www_domains",
       "held_out_count": 35329,
-      "accuracy": 0.9888759942257069,
-      "precision": 0.9703589985829003,
-      "recall": 0.9830123220480919,
-      "f1": 0.9766446781957568,
+      "accuracy": 0.9878286959721475,
+      "precision": 0.9635215713784637,
+      "recall": 0.9858834788850341,
+      "f1": 0.9745742667928098,
       "class_distribution": {
         "1": 26970,
         "0": 8359
@@ -167,10 +167,10 @@
     {
       "group": "domains_with_paths",
       "held_out_count": 5440,
-      "accuracy": 0.9939338235294117,
+      "accuracy": 0.9988970588235294,
       "precision": 1.0,
-      "recall": 0.9939338235294117,
-      "f1": 0.9969576841523001,
+      "recall": 0.9988970588235294,
+      "f1": 0.9994482251241493,
       "class_distribution": {
         "0": 5440
       }
@@ -178,10 +178,10 @@
     {
       "group": "HTTPS",
       "held_out_count": 36630,
-      "accuracy": 0.9642096642096643,
-      "precision": 0.9716416224155463,
-      "recall": 0.8902691511387164,
-      "f1": 0.9291772459618605,
+      "accuracy": 0.9742833742833743,
+      "precision": 0.9666024405908799,
+      "recall": 0.9347826086956522,
+      "f1": 0.9504262709188507,
       "class_distribution": {
         "1": 26970,
         "0": 9660
@@ -201,10 +201,10 @@
     {
       "group": ".com",
       "held_out_count": 22495,
-      "accuracy": 0.958390753500778,
-      "precision": 0.9833477241889725,
-      "recall": 0.9086971389490482,
-      "f1": 0.9445497630331754,
+      "accuracy": 0.9704378750833519,
+      "precision": 0.9762687969924813,
+      "recall": 0.9472244386184886,
+      "f1": 0.961527335840324,
       "class_distribution": {
         "1": 13722,
         "0": 8773
@@ -214,9 +214,9 @@
       "group": ".in",
       "held_out_count": 284,
       "accuracy": 0.9859154929577465,
-      "precision": 1.0,
-      "recall": 0.9652173913043478,
-      "f1": 0.9823008849557522,
+      "precision": 0.9911504424778761,
+      "recall": 0.9739130434782609,
+      "f1": 0.9824561403508771,
       "class_distribution": {
         "1": 169,
         "0": 115
@@ -247,10 +247,10 @@
     {
       "group": "obfuscated",
       "held_out_count": 484,
-      "accuracy": 1.0,
+      "accuracy": 0.9979338842975206,
       "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0,
+      "recall": 0.9979338842975206,
+      "f1": 0.9989658738366081,
       "class_distribution": {
         "0": 484
       }

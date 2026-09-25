@@ -10,3 +10,46 @@
 .orbit-two{width:330px;height:190px;transform:translate(-50%,-50%) rotate(35deg);border-color:rgba(80,143,248,.19)}
 .fallback-node{position:absolute;width:7px;height:7px;border-radius:50%;background:#5ce8f7;box-shadow:0 0 13px #28c9ed}
 .node-one{top:25%;left:31%}.node-two{top:69%;right:25%;width:5px;height:5px}.node-three{top:38%;right:22%;width:4px;height:4px}
+/* ---- PhishGuard agent layer (isolated ag- prefix; no existing selector touched) ---- */
+.ag-notice{border:1px solid rgba(214,178,88,.28);background:linear-gradient(180deg,rgba(214,178,88,.09),rgba(214,178,88,.03));border-radius:14px;padding:16px 18px;display:flex;gap:13px;align-items:flex-start}
+.ag-notice svg{flex:0 0 auto;margin-top:2px;color:#e2c069}
+.ag-notice h4{margin:0 0 5px;font-size:11.5px;letter-spacing:.1em;color:#e6cd8b}
+.ag-notice p{margin:0;font-size:12.5px;line-height:1.62;color:#b9c7d1}
+.ag-notice p+p{margin-top:7px}
+.ag-verdict{display:flex;flex-wrap:wrap;align-items:baseline;gap:12px 26px;margin:4px 0 2px}
+.ag-verdict-main{font-size:27px;font-weight:800;letter-spacing:-.015em;line-height:1.15}
+.ag-verdict-main.risk-text{color:#ff8a97}
+.ag-verdict-main.safe-text{color:#4fe3ad}
+.ag-chip{font:10px var(--mono);letter-spacing:.09em;text-transform:uppercase;border:1px solid var(--line);border-radius:999px;padding:5px 11px;color:#a9bcc8;background:rgba(255,255,255,.02)}
+.ag-chip.ag-chip-risk{border-color:rgba(239,104,120,.4);color:#ff9aa6;background:rgba(239,104,120,.08)}
+.ag-chip.ag-chip-safe{border-color:rgba(63,226,161,.34);color:#63e6b6;background:rgba(63,226,161,.07)}
+.ag-chip.ag-chip-warn{border-color:rgba(214,178,88,.4);color:#e6cd8b;background:rgba(214,178,88,.08)}
+.ag-score{font:11px var(--mono);color:var(--muted);letter-spacing:.05em}
+.ag-score b{color:#e8f2f7;font-size:15px;font-weight:700}
+.ag-block{margin-top:20px;padding-top:18px;border-top:1px solid var(--line)}
+.ag-block h5{margin:0 0 11px;font:10px var(--mono);letter-spacing:.13em;color:#8fa5b3;display:flex;align-items:center;gap:9px}
+.ag-block h5::after{content:"";flex:1;height:1px;background:var(--line)}
+.ag-list{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px}
+.ag-list li{position:relative;padding-left:19px;font-size:13px;line-height:1.63;color:#c3d1da}
+.ag-list li::before{content:"";position:absolute;left:3px;top:8px;width:5px;height:5px;border-radius:50%;background:var(--cyan);opacity:.75}
+.ag-list.ag-list-warn li::before{background:#e2c069}
+.ag-list.ag-list-num{counter-reset:agstep}
+.ag-list.ag-list-num li{counter-increment:agstep}
+.ag-list.ag-list-num li::before{content:counter(agstep);width:auto;height:auto;background:none;color:#5f7c8c;font:10px var(--mono);top:1px;left:0}
+.ag-signal-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(238px,1fr));gap:11px}
+.ag-signal{border:1px solid var(--line);border-radius:11px;padding:12px 13px;background:rgba(255,255,255,.018)}
+.ag-signal-top{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.ag-signal-top span{font:9.5px var(--mono);letter-spacing:.09em;text-transform:uppercase;color:#7f95a3}
+.ag-signal-top b{margin-left:auto;font:11px var(--mono);color:#63e6f0}
+.ag-signal p{margin:0;font-size:12.2px;line-height:1.56;color:#b3c3ce}
+.ag-rec{border-left:2px solid var(--cyan);background:rgba(70,222,245,.05);border-radius:0 11px 11px 0;padding:14px 16px}
+.ag-rec p{margin:0;font-size:13.5px;line-height:1.62;color:#dbe7ee}
+.ag-fine{margin:14px 0 0;font-size:11.4px;line-height:1.6;color:#7f93a0}
+.ag-fine b{color:#a6bccb;font-weight:600}
+.ag-flow{display:flex;flex-wrap:wrap;align-items:center;gap:8px 6px;margin-top:4px}
+.ag-flow span{font:10px var(--mono);letter-spacing:.07em;text-transform:uppercase;color:#9fb3c0;border:1px solid var(--line);border-radius:8px;padding:7px 11px;background:rgba(255,255,255,.02)}
+.ag-flow i{color:#3d5b6b;font-style:normal;font-size:11px}
+.ag-toggle{width:100%;margin-top:18px;background:none;border:1px solid var(--line);border-radius:10px;padding:11px 14px;color:#9fb3c0;font:10.5px var(--mono);letter-spacing:.09em;text-transform:uppercase;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:10px;transition:border-color .18s,color .18s}
+.ag-toggle:hover{border-color:rgba(70,222,245,.34);color:#cfe6ef}
+.ag-toggle:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
+@media(max-width:640px){.ag-verdict-main{font-size:23px}.ag-signal-grid{grid-template-columns:1fr}.ag-notice{padding:14px}}

@@ -1,0 +1,37 @@
+{
+  "dataset": "PhishTrap",
+  "official_record": "https://huggingface.co/datasets/saidutta69/PhishTrap",
+  "publisher": "saidutta69 (Hugging Face); build pipeline github.com/instax-dutta/PhishTrap",
+  "revision": "3158563225c7fb600ca30c9af3183c20cbfb9ada",
+  "file": "data/candidates/PhishTrap/phishtrap_full.csv",
+  "size_bytes": 2944432,
+  "sha256": "d6312beccf8a1a616706a94d7208dddbb65bbff24865d54c177ac4c232e878eb",
+  "access_method": "open HTTPS resolve, no authentication, no access-control bypass",
+  "header": ["url_length","hyphen_count","digit_count","subdomain_count","trusted_tld","protocol_exists","special_char_count","entropy","path_depth","domain_length","is_domain_ip","has_at_symbol","has_double_slash_redirect","tld_length","query_param_count","path_length","url","label","source","canonical_url","first_seen","last_seen","collected_at"],
+  "rows": 19948,
+  "label_semantics": "numeric; label 0 = legitimate, label 1 = phishing (verified against the dataset card and by row inspection: apex domains such as higgsfield.ai carry label 0)",
+  "class_counts": {"0_legitimate": 9974, "1_phishing": 9974},
+  "unique_normalized_urls": 19947,
+  "duplicate_normalized_rows": 1,
+  "conflicting_normalized_label_groups": 0,
+  "invalid_urls_project_normalizer": 0,
+  "structure_counts": {
+    "legitimate_label0": {"rows": 9973, "http": 9973, "https": 0, "apex_root": 7810, "apex_with_path": 0, "www": 476, "non_www_subdomain": 1687, "query": 0},
+    "phishing_label1": {"rows": 9974, "http": 9962, "https": 12, "apex_root": 5994, "apex_with_path": 6, "www": 0, "non_www_subdomain": 3974, "query": 9}
+  },
+  "declared_row_sources": {"tranco": 9974, "phishing_database": 9962, "phishstats": 9, "openphish": 3},
+  "license_status": "REQUIRES TERMS REVIEW",
+  "license_notes": [
+    "Dataset card declares MIT for the compilation and the build pipeline is MIT licensed.",
+    "The legitimate class is the Tranco top-10K list. Tranco aggregates providers including Cloudflare Radar under CC BY-NC 4.0 (non-commercial) and CrUX under CC BY-SA 4.0, so the derived legitimate rows inherit at least one non-commercial upstream component.",
+    "The phishing class is dominated by Phishing.Database (MIT) with 9 PhishStats rows and 3 OpenPhish rows; OpenPhish terms are non-commercial for detection/product use.",
+    "Conclusion: the MIT card covers the compilation, not the upstream data rights. This is NOT cleared as production-compatible for a public deployment."
+  ],
+  "known_biases": [
+    "Every legitimate row is constructed as http://<domain> (9973 http, 0 https), so the legitimate class is scheme-degenerate and injecting it into training would create a new HTTP-is-legitimate bias.",
+    "Legitimate rows are domains only; there are no legitimate queries and no legitimate apex-with-path rows.",
+    "Tranco ranks popularity, not safety; the publisher mitigates this by dropping any domain that later appears in a phishing feed, but the base label is still an inference."
+  ],
+  "training_use": "NOT APPROVED - upstream non-commercial component (Cloudflare Radar CC BY-NC 4.0 via Tranco) and OpenPhish non-commercial terms",
+  "diagnostic_use": "APPROVED FOR DIAGNOSTIC ONLY - used in docs/apex_representation_test to measure, not to train, select, or ship"
+}

@@ -1,0 +1,1086 @@
+{
+  "experiment": "controlled baseline, canonical dataset only (no candidate datasets read)",
+  "candidate_datasets_used": [],
+  "candidate_datasets_forbidden_and_untouched": [
+    "PhreshPhish",
+    "EdgePhish-5G",
+    "PhishVN",
+    "PhishBD",
+    "LegitPhish",
+    "URL-Phish",
+    "ISCX",
+    "PhishStorm"
+  ],
+  "started_utc": "2026-09-25T18:47:30.500769+00:00",
+  "finished_utc": "2026-09-25T18:48:51.893602+00:00",
+  "canonical": {
+    "file": "data/raw/PhiUSIIL_Phishing_URL_Dataset.csv",
+    "raw_rows": 235795,
+    "clean_rows": 234894,
+    "cleaning": {
+      "input_rows": 235795,
+      "missing_url_removed": 0,
+      "missing_label_removed": 0,
+      "empty_url_removed": 0,
+      "invalid_url_removed": 0,
+      "invalid_or_inconsistent_label_removed": 0,
+      "conflicting_label_url_count": 1,
+      "conflicting_label_urls_removed": 2,
+      "duplicate_normalized_url_removed": 899,
+      "clean_rows": 234894,
+      "per_source": {
+        "PhiUSIIL_Phishing_URL_Dataset.csv [sha256:a236549cd369]": {
+          "input_rows": 235795,
+          "conflicting_label_rows_removed": 2,
+          "duplicate_normalized_url_removed": 899,
+          "clean_rows": 234894
+        }
+      }
+    },
+    "label_mapping": {
+      "1": "Legitimate",
+      "0": "Phishing"
+    },
+    "class_counts_raw": {
+      "1": 134850,
+      "0": 100945
+    }
+  },
+  "representation_audit_by_class": {
+    "0": {
+      "rows": 100945,
+      "valid_url": 100945,
+      "http": 51749,
+      "www": 41744,
+      "root_path": 72456,
+      "https": 49196,
+      "apex_root": 21301,
+      "apex_with_path": 14521,
+      "query": 6079,
+      "other_subdomain": 23379,
+      "percent_encoded": 887,
+      "ip_host": 608,
+      "punycode": 151,
+      "explicit_port": 16
+    },
+    "1": {
+      "rows": 134850,
+      "valid_url": 134850,
+      "https": 134850,
+      "www": 134850,
+      "root_path": 134850
+    }
+  },
+  "primary_split": {
+    "label": "PRIMARY EVALUATION - STRATIFIED URL-LEVEL 80/20",
+    "train_rows": 187915,
+    "test_rows": 46979,
+    "random_state": 42
+  },
+  "primary_metrics": {
+    "Logistic Regression": {
+      "model": "Logistic Regression",
+      "accuracy": 0.972093914302135,
+      "precision": 0.9869270833333333,
+      "recall": 0.9470238392723275,
+      "f1": 0.9665637991277513,
+      "training_score": 0.9717797940558232,
+      "testing_score": 0.972093914302135,
+      "train_test_gap": -0.0003141202463118331,
+      "false_positives": 251,
+      "false_negatives": 1060,
+      "positive_class": "Potential Phishing (0)",
+      "confusion_matrix": {
+        "labels": [
+          "Phishing (0)",
+          "Legitimate (1)"
+        ],
+        "matrix": [
+          [
+            18949,
+            1060
+          ],
+          [
+            251,
+            26719
+          ]
+        ]
+      }
+    },
+    "Decision Tree": {
+      "model": "Decision Tree",
+      "accuracy": 0.979948487622129,
+      "precision": 0.9841551978061043,
+      "recall": 0.9685141686241191,
+      "f1": 0.976272040302267,
+      "training_score": 0.9866216108346859,
+      "testing_score": 0.979948487622129,
+      "train_test_gap": 0.006673123212556864,
+      "false_positives": 312,
+      "false_negatives": 630,
+      "positive_class": "Potential Phishing (0)",
+      "confusion_matrix": {
+        "labels": [
+          "Phishing (0)",
+          "Legitimate (1)"
+        ],
+        "matrix": [
+          [
+            19379,
+            630
+          ],
+          [
+            312,
+            26658
+          ]
+        ]
+      }
+    },
+    "Random Forest": {
+      "model": "Random Forest",
+      "accuracy": 0.9781604546712361,
+      "precision": 0.9848786717752235,
+      "recall": 0.9635164176120745,
+      "f1": 0.9740804365400162,
+      "training_score": 0.9786179921773143,
+      "testing_score": 0.9781604546712361,
+      "train_test_gap": 0.0004575375060781317,
+      "false_positives": 296,
+      "false_negatives": 730,
+      "positive_class": "Potential Phishing (0)",
+      "confusion_matrix": {
+        "labels": [
+          "Phishing (0)",
+          "Legitimate (1)"
+        ],
+        "matrix": [
+          [
+            19279,
+            730
+          ],
+          [
+            296,
+            26674
+          ]
+        ]
+      }
+    }
+  },
+  "domain_split": {
+    "label": "DOMAIN-AWARE EVALUATION - REGISTRABLE-DOMAIN GROUPED, PSL-AWARE",
+    "method": "GroupShuffleSplit test_size=0.2, random_state=42, groups from src/domain_split.py (tldextract, PSL private domains included)",
+    "train_rows": 187391,
+    "test_rows": 47503,
+    "train_groups": 157840,
+    "test_groups": 39460,
+    "overlap_count": 0,
+    "overlap_pct_of_union": 0.0,
+    "overlap_pct_of_test": 0.0
+  },
+  "domain_metrics": {
+    "Logistic Regression": {
+      "model": "Logistic Regression",
+      "accuracy": 0.9731174873165905,
+      "precision": 0.9869871402327005,
+      "recall": 0.9498109315916122,
+      "f1": 0.9680422432993818,
+      "false_positives": 255,
+      "false_negatives": 1022,
+      "positive_class": "Potential Phishing (0)",
+      "confusion_matrix": {
+        "labels": [
+          "Phishing (0)",
+          "Legitimate (1)"
+        ],
+        "matrix": [
+          [
+            19341,
+            1022
+          ],
+          [
+            255,
+            26885
+          ]
+        ]
+      },
+      "train_rows": 187391,
+      "test_rows": 47503,
+      "train_groups": 157840,
+      "test_groups": 39460
+    },
+    "Decision Tree": {
+      "model": "Decision Tree",
+      "accuracy": 0.9792013136012462,
+      "precision": 0.9838186086001098,
+      "recall": 0.9673918381377989,
+      "f1": 0.9755360768583172,
+      "false_positives": 324,
+      "false_negatives": 664,
+      "positive_class": "Potential Phishing (0)",
+      "confusion_matrix": {
+        "labels": [
+          "Phishing (0)",
+          "Legitimate (1)"
+        ],
+        "matrix": [
+          [
+            19699,
+            664
+          ],
+          [
+            324,
+            26816
+          ]
+        ]
+      },
+      "train_rows": 187391,
+      "test_rows": 47503,
+      "train_groups": 157840,
+      "test_groups": 39460
+    },
+    "Random Forest": {
+      "model": "Random Forest",
+      "accuracy": 0.979053954487085,
+      "precision": 0.9853162273228425,
+      "recall": 0.9655257083926729,
+      "f1": 0.9753205843688767,
+      "false_positives": 293,
+      "false_negatives": 702,
+      "positive_class": "Potential Phishing (0)",
+      "confusion_matrix": {
+        "labels": [
+          "Phishing (0)",
+          "Legitimate (1)"
+        ],
+        "matrix": [
+          [
+            19661,
+            702
+          ],
+          [
+            293,
+            26847
+          ]
+        ]
+      },
+      "train_rows": 187391,
+      "test_rows": 47503,
+      "train_groups": 157840,
+      "test_groups": 39460
+    }
+  },
+  "diagnostic": {
+    "label": "DIAGNOSTIC / ROBUSTNESS TEST - not an official benchmark",
+    "ground_truth": "canonical source labels only; source labels are dataset labels, not current-safety verdicts",
+    "candidate_datasets_used": [],
+    "unavailable_categories": [
+      {
+        "category": "legitimate apex-root URL",
+        "available_in_canonical": false,
+        "measured_rows": 0,
+        "reason": "canonical label-1 rows are 100% HTTPS + www + root-path; zero apex-root legitimate rows exist, and no non-approved dataset may be used to supply them."
+      },
+      {
+        "category": "legitimate apex with path",
+        "available_in_canonical": false,
+        "measured_rows": 0,
+        "reason": "zero legitimate apex rows of any path shape in canonical."
+      },
+      {
+        "category": "legitimate non-www subdomain",
+        "available_in_canonical": false,
+        "measured_rows": 0,
+        "reason": "zero legitimate non-www subdomain rows in canonical."
+      }
+    ],
+    "items": [
+      {
+        "url": "https://www.southbankmosaics.com",
+        "normalized": "https://www.southbankmosaics.com/",
+        "source_label": 1,
+        "source": "canonical CSV (PhiUSIIL, UCI 967), label 1",
+        "category": "legitimate www",
+        "production_model": {
+          "label": 1,
+          "confidence": 1.0
+        },
+        "experimental_models": {
+          "Logistic Regression": {
+            "label": 1,
+            "confidence": 0.7052604951819123
+          },
+          "Decision Tree": {
+            "label": 1,
+            "confidence": 1.0
+          },
+          "Random Forest": {
+            "label": 1,
+            "confidence": 0.74551389256823
+          }
+        },
+        "matches_source_label": {
+          "production": true,
+          "Logistic Regression": true,
+          "Decision Tree": true,
+          "Random Forest": true
+        },
+        "features": {
+          "URLLength": 33,
+          "DomainLength": 24,
+          "TLDLength": 3,
+          "TLD": "com",
+          "NoOfSubDomain": 1,
+          "HasObfuscation": 0,
+          "NoOfObfuscatedChar": 0,
+          "ObfuscationRatio": 0.0,
+          "NoOfLettersInURL": 27,
+          "LetterRatioInURL": 0.8181818181818182,
+          "NoOfDegitsInURL": 0,
+          "DegitRatioInURL": 0.0,
+          "NoOfEqualsInURL": 0,
+          "NoOfQMarkInURL": 0,
+          "NoOfAmpersandInURL": 0,
+          "NoOfOtherSpecialCharsInURL": 4,
+          "SpacialCharRatioInURL": 0.18181818181818182,
+          "IsDomainIP": 0,
+          "IsHTTPS": 1,
+          "num_dots": 2,
+          "num_hyphens": 0,
+          "num_underscores": 0,
+          "num_slashes": 3,
+          "num_at": 0,
+          "num_hashes": 0,
+          "num_percent": 0,
+          "num_colons": 1,
+          "num_semicolons": 0,
+          "url_entropy": 3.9225895736416696,
+          "path_length": 1,
+          "query_length": 0,
+          "fragment_length": 0,
+          "has_port": 0,
+          "has_punycode": 0,
+          "has_url_shortener": 0,
+          "num_encoded_chars": 0,
+          "max_repeat_ratio": 0.12121212121212122,
+          "num_suspicious_keywords": 1
+        }
+      },
+      {
+        "url": "https://www.uni-mainz.de",
+        "normalized": "https://www.uni-mainz.de/",
+        "source_label": 1,
+        "source": "canonical CSV (PhiUSIIL, UCI 967), label 1",
+        "category": "legitimate www",
+        "production_model": {
+          "label": 1,
+          "confidence": 1.0
+        },
+        "experimental_models": {
+          "Logistic Regression": {
+            "label": 1,
+            "confidence": 0.9912119386731584
+          },
+          "Decision Tree": {
+            "label": 1,
+            "confidence": 1.0
+          },
+          "Random Forest": {
+            "label": 1,
+            "confidence": 0.923175561359263
+          }
+        },
+        "matches_source_label": {
+          "production": true,
+          "Logistic Regression": true,
+          "Decision Tree": true,
+          "Random Forest": true
+        },
+        "features": {
+          "URLLength": 25,
+          "DomainLength": 16,
+          "TLDLength": 2,
+          "TLD": "de",
+          "NoOfSubDomain": 1,
+          "HasObfuscation": 0,
+          "NoOfObfuscatedChar": 0,
+          "ObfuscationRatio": 0.0,
+          "NoOfLettersInURL": 18,
+          "LetterRatioInURL": 0.72,
+          "NoOfDegitsInURL": 0,
+          "DegitRatioInURL": 0.0,
+          "NoOfEqualsInURL": 0,
+          "NoOfQMarkInURL": 0,
+          "NoOfAmpersandInURL": 0,
+          "NoOfOtherSpecialCharsInURL": 4,
+          "SpacialCharRatioInURL": 0.28,
+          "IsDomainIP": 0,
+          "IsHTTPS": 1,
+          "num_dots": 2,
+          "num_hyphens": 1,
+          "num_underscores": 0,
+          "num_slashes": 3,
+          "num_at": 0,
+          "num_hashes": 0,
+          "num_percent": 0,
+          "num_colons": 1,
+          "num_semicolons": 0,
+          "url_entropy": 3.943465189601647,
+          "path_length": 1,
+          "query_length": 0,
+          "fragment_length": 0,
+          "has_port": 0,
+          "has_punycode": 0,
+          "has_url_shortener": 0,
+          "num_encoded_chars": 0,
+          "max_repeat_ratio": 0.12,
+          "num_suspicious_keywords": 0
+        }
+      },
+      {
+        "url": "https://www.voicefmradio.co.uk",
+        "normalized": "https://www.voicefmradio.co.uk/",
+        "source_label": 1,
+        "source": "canonical CSV (PhiUSIIL, UCI 967), label 1",
+        "category": "legitimate www",
+        "production_model": {
+          "label": 1,
+          "confidence": 1.0
+        },
+        "experimental_models": {
+          "Logistic Regression": {
+            "label": 1,
+            "confidence": 0.9989656322784242
+          },
+          "Decision Tree": {
+            "label": 1,
+            "confidence": 1.0
+          },
+          "Random Forest": {
+            "label": 1,
+            "confidence": 0.9521792384390145
+          }
+        },
+        "matches_source_label": {
+          "production": true,
+          "Logistic Regression": true,
+          "Decision Tree": true,
+          "Random Forest": true
+        },
+        "features": {
+          "URLLength": 31,
+          "DomainLength": 22,
+          "TLDLength": 2,
+          "TLD": "uk",
+          "NoOfSubDomain": 2,
+          "HasObfuscation": 0,
+          "NoOfObfuscatedChar": 0,
+          "ObfuscationRatio": 0.0,
+          "NoOfLettersInURL": 24,
+          "LetterRatioInURL": 0.7741935483870968,
+          "NoOfDegitsInURL": 0,
+          "DegitRatioInURL": 0.0,
+          "NoOfEqualsInURL": 0,
+          "NoOfQMarkInURL": 0,
+          "NoOfAmpersandInURL": 0,
+          "NoOfOtherSpecialCharsInURL": 4,
+          "SpacialCharRatioInURL": 0.22580645161290322,
+          "IsDomainIP": 0,
+          "IsHTTPS": 1,
+          "num_dots": 3,
+          "num_hyphens": 0,
+          "num_underscores": 0,
+          "num_slashes": 3,
+          "num_at": 0,
+          "num_hashes": 0,
+          "num_percent": 0,
+          "num_colons": 1,
+          "num_semicolons": 0,
+          "url_entropy": 4.147114052043202,
+          "path_length": 1,
+          "query_length": 0,
+          "fragment_length": 0,
+          "has_port": 0,
+          "has_punycode": 0,
+          "has_url_shortener": 0,
+          "num_encoded_chars": 0,
+          "max_repeat_ratio": 0.0967741935483871,
+          "num_suspicious_keywords": 0
+        }
+      },
+      {
+        "url": "http://198.98.58.123/",
+        "normalized": "http://198.98.58.123/",
+        "source_label": 0,
+        "source": "canonical CSV (PhiUSIIL, UCI 967), label 0",
+        "category": "suspicious IP URL",
+        "production_model": {
+          "label": 0,
+          "confidence": 1.0
+        },
+        "experimental_models": {
+          "Logistic Regression": {
+            "label": 0,
+            "confidence": 0.999999987673302
+          },
+          "Decision Tree": {
+            "label": 0,
+            "confidence": 1.0
+          },
+          "Random Forest": {
+            "label": 0,
+            "confidence": 0.9653339277302632
+          }
+        },
+        "matches_source_label": {
+          "production": true,
+          "Logistic Regression": true,
+          "Decision Tree": true,
+          "Random Forest": true
+        },
+        "features": {
+          "URLLength": 21,
+          "DomainLength": 13,
+          "TLDLength": 3,
+          "TLD": "123",
+          "NoOfSubDomain": 2,
+          "HasObfuscation": 0,
+          "NoOfObfuscatedChar": 0,
+          "ObfuscationRatio": 0.0,
+          "NoOfLettersInURL": 4,
+          "LetterRatioInURL": 0.19047619047619047,
+          "NoOfDegitsInURL": 10,
+          "DegitRatioInURL": 0.47619047619047616,
+          "NoOfEqualsInURL": 0,
+          "NoOfQMarkInURL": 0,
+          "NoOfAmpersandInURL": 0,
+          "NoOfOtherSpecialCharsInURL": 4,
+          "SpacialCharRatioInURL": 0.3333333333333333,
+          "IsDomainIP": 1,
+          "IsHTTPS": 0,
+          "num_dots": 3,
+          "num_hyphens": 0,
+          "num_underscores": 0,
+          "num_slashes": 3,
+          "num_at": 0,
+          "num_hashes": 0,
+          "num_percent": 0,
+          "num_colons": 1,
+          "num_semicolons": 0,
+          "url_entropy": 3.4273334938982645,
+          "path_length": 1,
+          "query_length": 0,
+          "fragment_length": 0,
+          "has_port": 0,
+          "has_punycode": 0,
+          "has_url_shortener": 0,
+          "num_encoded_chars": 0,
+          "max_repeat_ratio": 0.14285714285714285,
+          "num_suspicious_keywords": 0
+        }
+      },
+      {
+        "url": "http://forcedie17.temp.swtest.ru/postounatou/postounatou/post/login/login.php",
+        "normalized": "http://forcedie17.temp.swtest.ru/postounatou/postounatou/post/login/login.php",
+        "source_label": 0,
+        "source": "canonical CSV (PhiUSIIL, UCI 967), label 0",
+        "category": "suspicious login-pattern URL",
+        "production_model": {
+          "label": 0,
+          "confidence": 1.0
+        },
+        "experimental_models": {
+          "Logistic Regression": {
+            "label": 0,
+            "confidence": 1.0
+          },
+          "Decision Tree": {
+            "label": 0,
+            "confidence": 1.0
+          },
+          "Random Forest": {
+            "label": 0,
+            "confidence": 0.9988205566975542
+          }
+        },
+        "matches_source_label": {
+          "production": true,
+          "Logistic Regression": true,
+          "Decision Tree": true,
+          "Random Forest": true
+        },
+        "features": {
+          "URLLength": 77,
+          "DomainLength": 25,
+          "TLDLength": 2,
+          "TLD": "ru",
+          "NoOfSubDomain": 2,
+          "HasObfuscation": 0,
+          "NoOfObfuscatedChar": 0,
+          "ObfuscationRatio": 0.0,
+          "NoOfLettersInURL": 63,
+          "LetterRatioInURL": 0.8181818181818182,
+          "NoOfDegitsInURL": 2,
+          "DegitRatioInURL": 0.025974025974025976,
+          "NoOfEqualsInURL": 0,
+          "NoOfQMarkInURL": 0,
+          "NoOfAmpersandInURL": 0,
+          "NoOfOtherSpecialCharsInURL": 8,
+          "SpacialCharRatioInURL": 0.15584415584415584,
+          "IsDomainIP": 0,
+          "IsHTTPS": 0,
+          "num_dots": 4,
+          "num_hyphens": 0,
+          "num_underscores": 0,
+          "num_slashes": 7,
+          "num_at": 0,
+          "num_hashes": 0,
+          "num_percent": 0,
+          "num_colons": 1,
+          "num_semicolons": 0,
+          "url_entropy": 4.088660576310605,
+          "path_length": 45,
+          "query_length": 0,
+          "fragment_length": 0,
+          "has_port": 0,
+          "has_punycode": 0,
+          "has_url_shortener": 0,
+          "num_encoded_chars": 0,
+          "max_repeat_ratio": 0.12987012987012986,
+          "num_suspicious_keywords": 1
+        }
+      },
+      {
+        "url": "http://cpanel10wh.bkk1.cloud.z.com/~cp785288/hlep/login/billing.php?verify_account=session=nl&amp;c9af20c816b1cce4f06368be3327e297=&amp;dispatch=15464ad822e0af50d3b1df6196cac08a9e8edfbd",
+        "normalized": "http://cpanel10wh.bkk1.cloud.z.com/~cp785288/hlep/login/billing.php?verify_account=session=nl&amp;c9af20c816b1cce4f06368be3327e297=&amp;dispatch=15464ad822e0af50d3b1df6196cac08a9e8edfbd",
+        "source_label": 0,
+        "source": "canonical CSV (PhiUSIIL, UCI 967), label 0",
+        "category": "suspicious verification-pattern URL",
+        "production_model": {
+          "label": 0,
+          "confidence": 1.0
+        },
+        "experimental_models": {
+          "Logistic Regression": {
+            "label": 0,
+            "confidence": 1.0
+          },
+          "Decision Tree": {
+            "label": 0,
+            "confidence": 1.0
+          },
+          "Random Forest": {
+            "label": 0,
+            "confidence": 0.9997878966692894
+          }
+        },
+        "matches_source_label": {
+          "production": true,
+          "Logistic Regression": true,
+          "Decision Tree": true,
+          "Random Forest": true
+        },
+        "features": {
+          "URLLength": 185,
+          "DomainLength": 27,
+          "TLDLength": 3,
+          "TLD": "com",
+          "NoOfSubDomain": 3,
+          "HasObfuscation": 0,
+          "NoOfObfuscatedChar": 0,
+          "ObfuscationRatio": 0.0,
+          "NoOfLettersInURL": 112,
+          "LetterRatioInURL": 0.6054054054054054,
+          "NoOfDegitsInURL": 50,
+          "DegitRatioInURL": 0.2702702702702703,
+          "NoOfEqualsInURL": 4,
+          "NoOfQMarkInURL": 1,
+          "NoOfAmpersandInURL": 2,
+          "NoOfOtherSpecialCharsInURL": 17,
+          "SpacialCharRatioInURL": 0.12432432432432433,
+          "IsDomainIP": 0,
+          "IsHTTPS": 0,
+          "num_dots": 5,
+          "num_hyphens": 0,
+          "num_underscores": 1,
+          "num_slashes": 6,
+          "num_at": 0,
+          "num_hashes": 0,
+          "num_percent": 0,
+          "num_colons": 1,
+          "num_semicolons": 2,
+          "url_entropy": 5.07757211956306,
+          "path_length": 33,
+          "query_length": 117,
+          "fragment_length": 0,
+          "has_port": 0,
+          "has_punycode": 0,
+          "has_url_shortener": 0,
+          "num_encoded_chars": 0,
+          "max_repeat_ratio": 0.07027027027027027,
+          "num_suspicious_keywords": 4
+        }
+      },
+      {
+        "url": "https://s3.amazonaws.com/appforest_uf/f1678949673383x832048620362898600/index%20%284%29.html",
+        "normalized": "https://s3.amazonaws.com/appforest_uf/f1678949673383x832048620362898600/index%20%284%29.html",
+        "source_label": 0,
+        "source": "canonical CSV (PhiUSIIL, UCI 967), label 0",
+        "category": "suspicious percent-encoded URL",
+        "production_model": {
+          "label": 0,
+          "confidence": 1.0
+        },
+        "experimental_models": {
+          "Logistic Regression": {
+            "label": 0,
+            "confidence": 1.0
+          },
+          "Decision Tree": {
+            "label": 0,
+            "confidence": 1.0
+          },
+          "Random Forest": {
+            "label": 0,
+            "confidence": 0.9993521436116211
+          }
+        },
+        "matches_source_label": {
+          "production": true,
+          "Logistic Regression": true,
+          "Decision Tree": true,
+          "Random Forest": true
+        },
+        "features": {
+          "URLLength": 92,
+          "DomainLength": 16,
+          "TLDLength": 3,
+          "TLD": "com",
+          "NoOfSubDomain": 1,
+          "HasObfuscation": 1,
+          "NoOfObfuscatedChar": 3,
+          "ObfuscationRatio": 0.03260869565217391,
+          "NoOfLettersInURL": 40,
+          "LetterRatioInURL": 0.43478260869565216,
+          "NoOfDegitsInURL": 39,
+          "DegitRatioInURL": 0.42391304347826086,
+          "NoOfEqualsInURL": 0,
+          "NoOfQMarkInURL": 0,
+          "NoOfAmpersandInURL": 0,
+          "NoOfOtherSpecialCharsInURL": 9,
+          "SpacialCharRatioInURL": 0.14130434782608695,
+          "IsDomainIP": 0,
+          "IsHTTPS": 1,
+          "num_dots": 3,
+          "num_hyphens": 0,
+          "num_underscores": 1,
+          "num_slashes": 5,
+          "num_at": 0,
+          "num_hashes": 0,
+          "num_percent": 3,
+          "num_colons": 1,
+          "num_semicolons": 0,
+          "url_entropy": 4.775907951692754,
+          "path_length": 68,
+          "query_length": 0,
+          "fragment_length": 0,
+          "has_port": 0,
+          "has_punycode": 0,
+          "has_url_shortener": 0,
+          "num_encoded_chars": 3,
+          "max_repeat_ratio": 0.07608695652173914,
+          "num_suspicious_keywords": 0
+        }
+      },
+      {
+        "url": "http://191.252.178.240:8087/",
+        "normalized": "http://191.252.178.240:8087/",
+        "source_label": 0,
+        "source": "canonical CSV (PhiUSIIL, UCI 967), label 0",
+        "category": "suspicious explicit-port URL",
+        "production_model": {
+          "label": 0,
+          "confidence": 1.0
+        },
+        "experimental_models": {
+          "Logistic Regression": {
+            "label": 0,
+            "confidence": 0.9999999999874891
+          },
+          "Decision Tree": {
+            "label": 0,
+            "confidence": 1.0
+          },
+          "Random Forest": {
+            "label": 0,
+            "confidence": 0.9841133402972101
+          }
+        },
+        "matches_source_label": {
+          "production": true,
+          "Logistic Regression": true,
+          "Decision Tree": true,
+          "Random Forest": true
+        },
+        "features": {
+          "URLLength": 28,
+          "DomainLength": 15,
+          "TLDLength": 3,
+          "TLD": "240",
+          "NoOfSubDomain": 2,
+          "HasObfuscation": 0,
+          "NoOfObfuscatedChar": 0,
+          "ObfuscationRatio": 0.0,
+          "NoOfLettersInURL": 4,
+          "LetterRatioInURL": 0.14285714285714285,
+          "NoOfDegitsInURL": 16,
+          "DegitRatioInURL": 0.5714285714285714,
+          "NoOfEqualsInURL": 0,
+          "NoOfQMarkInURL": 0,
+          "NoOfAmpersandInURL": 0,
+          "NoOfOtherSpecialCharsInURL": 5,
+          "SpacialCharRatioInURL": 0.2857142857142857,
+          "IsDomainIP": 1,
+          "IsHTTPS": 0,
+          "num_dots": 3,
+          "num_hyphens": 0,
+          "num_underscores": 0,
+          "num_slashes": 3,
+          "num_at": 0,
+          "num_hashes": 0,
+          "num_percent": 0,
+          "num_colons": 2,
+          "num_semicolons": 0,
+          "url_entropy": 3.6725535823855564,
+          "path_length": 1,
+          "query_length": 0,
+          "fragment_length": 0,
+          "has_port": 1,
+          "has_punycode": 0,
+          "has_url_shortener": 0,
+          "num_encoded_chars": 0,
+          "max_repeat_ratio": 0.10714285714285714,
+          "num_suspicious_keywords": 0
+        }
+      },
+      {
+        "url": "https://xn--g1acv.xn--c1avg/new/outlook/index.php",
+        "normalized": "https://xn--g1acv.xn--c1avg/new/outlook/index.php",
+        "source_label": 0,
+        "source": "canonical CSV (PhiUSIIL, UCI 967), label 0",
+        "category": "suspicious punycode URL",
+        "production_model": {
+          "label": 0,
+          "confidence": 1.0
+        },
+        "experimental_models": {
+          "Logistic Regression": {
+            "label": 0,
+            "confidence": 1.0
+          },
+          "Decision Tree": {
+            "label": 0,
+            "confidence": 1.0
+          },
+          "Random Forest": {
+            "label": 0,
+            "confidence": 0.9891153751413134
+          }
+        },
+        "matches_source_label": {
+          "production": true,
+          "Logistic Regression": true,
+          "Decision Tree": true,
+          "Random Forest": true
+        },
+        "features": {
+          "URLLength": 49,
+          "DomainLength": 19,
+          "TLDLength": 9,
+          "TLD": "xn--c1avg",
+          "NoOfSubDomain": 0,
+          "HasObfuscation": 0,
+          "NoOfObfuscatedChar": 0,
+          "ObfuscationRatio": 0.0,
+          "NoOfLettersInURL": 35,
+          "LetterRatioInURL": 0.7142857142857143,
+          "NoOfDegitsInURL": 2,
+          "DegitRatioInURL": 0.04081632653061224,
+          "NoOfEqualsInURL": 0,
+          "NoOfQMarkInURL": 0,
+          "NoOfAmpersandInURL": 0,
+          "NoOfOtherSpecialCharsInURL": 6,
+          "SpacialCharRatioInURL": 0.24489795918367346,
+          "IsDomainIP": 0,
+          "IsHTTPS": 1,
+          "num_dots": 2,
+          "num_hyphens": 4,
+          "num_underscores": 0,
+          "num_slashes": 5,
+          "num_at": 0,
+          "num_hashes": 0,
+          "num_percent": 0,
+          "num_colons": 1,
+          "num_semicolons": 0,
+          "url_entropy": 4.336563099562337,
+          "path_length": 22,
+          "query_length": 0,
+          "fragment_length": 0,
+          "has_port": 0,
+          "has_punycode": 1,
+          "has_url_shortener": 0,
+          "num_encoded_chars": 0,
+          "max_repeat_ratio": 0.10204081632653061,
+          "num_suspicious_keywords": 0
+        }
+      },
+      {
+        "url": "https://service-mitld.firebaseapp.com/",
+        "normalized": "https://service-mitld.firebaseapp.com/",
+        "source_label": 0,
+        "source": "canonical CSV (PhiUSIIL, UCI 967), label 0",
+        "category": "suspicious apex-root URL",
+        "production_model": {
+          "label": 0,
+          "confidence": 1.0
+        },
+        "experimental_models": {
+          "Logistic Regression": {
+            "label": 1,
+            "confidence": 0.654130271120233
+          },
+          "Decision Tree": {
+            "label": 0,
+            "confidence": 1.0
+          },
+          "Random Forest": {
+            "label": 1,
+            "confidence": 0.5418949221799026
+          }
+        },
+        "matches_source_label": {
+          "production": true,
+          "Logistic Regression": false,
+          "Decision Tree": true,
+          "Random Forest": false
+        },
+        "features": {
+          "URLLength": 38,
+          "DomainLength": 29,
+          "TLDLength": 3,
+          "TLD": "com",
+          "NoOfSubDomain": 1,
+          "HasObfuscation": 0,
+          "NoOfObfuscatedChar": 0,
+          "ObfuscationRatio": 0.0,
+          "NoOfLettersInURL": 31,
+          "LetterRatioInURL": 0.8157894736842105,
+          "NoOfDegitsInURL": 0,
+          "DegitRatioInURL": 0.0,
+          "NoOfEqualsInURL": 0,
+          "NoOfQMarkInURL": 0,
+          "NoOfAmpersandInURL": 0,
+          "NoOfOtherSpecialCharsInURL": 4,
+          "SpacialCharRatioInURL": 0.18421052631578946,
+          "IsDomainIP": 0,
+          "IsHTTPS": 1,
+          "num_dots": 2,
+          "num_hyphens": 1,
+          "num_underscores": 0,
+          "num_slashes": 3,
+          "num_at": 0,
+          "num_hashes": 0,
+          "num_percent": 0,
+          "num_colons": 1,
+          "num_semicolons": 0,
+          "url_entropy": 4.14860021052734,
+          "path_length": 1,
+          "query_length": 0,
+          "fragment_length": 0,
+          "has_port": 0,
+          "has_punycode": 0,
+          "has_url_shortener": 0,
+          "num_encoded_chars": 0,
+          "max_repeat_ratio": 0.10526315789473684,
+          "num_suspicious_keywords": 0
+        }
+      },
+      {
+        "url": "https://liuy-9a930.web.app/",
+        "normalized": "https://liuy-9a930.web.app/",
+        "source_label": 0,
+        "source": "canonical CSV (PhiUSIIL, UCI 967), label 0",
+        "category": "suspicious apex-root URL",
+        "production_model": {
+          "label": 0,
+          "confidence": 1.0
+        },
+        "experimental_models": {
+          "Logistic Regression": {
+            "label": 0,
+            "confidence": 0.9997129956813905
+          },
+          "Decision Tree": {
+            "label": 0,
+            "confidence": 1.0
+          },
+          "Random Forest": {
+            "label": 0,
+            "confidence": 0.9107873621970618
+          }
+        },
+        "matches_source_label": {
+          "production": true,
+          "Logistic Regression": true,
+          "Decision Tree": true,
+          "Random Forest": true
+        },
+        "features": {
+          "URLLength": 27,
+          "DomainLength": 18,
+          "TLDLength": 3,
+          "TLD": "app",
+          "NoOfSubDomain": 1,
+          "HasObfuscation": 0,
+          "NoOfObfuscatedChar": 0,
+          "ObfuscationRatio": 0.0,
+          "NoOfLettersInURL": 16,
+          "LetterRatioInURL": 0.5925925925925926,
+          "NoOfDegitsInURL": 4,
+          "DegitRatioInURL": 0.14814814814814814,
+          "NoOfEqualsInURL": 0,
+          "NoOfQMarkInURL": 0,
+          "NoOfAmpersandInURL": 0,
+          "NoOfOtherSpecialCharsInURL": 4,
+          "SpacialCharRatioInURL": 0.25925925925925924,
+          "IsDomainIP": 0,
+          "IsHTTPS": 1,
+          "num_dots": 2,
+          "num_hyphens": 1,
+          "num_underscores": 0,
+          "num_slashes": 3,
+          "num_at": 0,
+          "num_hashes": 0,
+          "num_percent": 0,
+          "num_colons": 1,
+          "num_semicolons": 0,
+          "url_entropy": 4.106377316818026,
+          "path_length": 1,
+          "query_length": 0,
+          "fragment_length": 0,
+          "has_port": 0,
+          "has_punycode": 0,
+          "has_url_shortener": 0,
+          "num_encoded_chars": 0,
+          "max_repeat_ratio": 0.1111111111111111,
+          "num_suspicious_keywords": 0
+        }
+      }
+    ]
+  },
+  "production_artifact_guard": {
+    "joblib_sha256_before": "882b1f5de934cb0a190f0f9461ea744b1e96cb42e9a3f539a60279662d724df1",
+    "joblib_sha256_after": "882b1f5de934cb0a190f0f9461ea744b1e96cb42e9a3f539a60279662d724df1",
+    "metadata_sha256_before": "c1f239c40b57aac009092e6d77cfaecef3207f4d7c852601118f20a000672d2c",
+    "metadata_sha256_after": "c1f239c40b57aac009092e6d77cfaecef3207f4d7c852601118f20a000672d2c"
+  }
+}
